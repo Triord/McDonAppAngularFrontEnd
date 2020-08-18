@@ -1,0 +1,8 @@
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+  background-color: rgb(221, 154, 154);
+}
+.table-striped>tbody>tr:nth-child(even)>td,
+.table-striped>tbody>tr:nth-child(even)>th {
+  background-color: hsl(0, 57%, 51%);
+  color: rgb(0, 0, 0);
+}

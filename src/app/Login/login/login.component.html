@@ -1,0 +1,23 @@
+
+  <div class="center" >
+    <h2>Login</h2>
+    <form *ngIf="!logged" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="formGroup">
+    <label>
+      Mail:
+      <input type="text" formControlName="mail" class="form-control">
+
+    </label>
+    </div>
+    <div class="formGroup">
+    <label>
+      Password:
+      <input type="password" formControlName="password" class="form-control">
+    </label>
+  </div>
+    <button  class="btn btn-success" type="submit"> Se connecter</button>
+   <!-- <button class="btn btn-primary" [routerLink]="'/register'"> S'enregistrer</button>-->
+  </form>
+  </div>
+  <button class="btn btn-danger"*ngIf="logged" (click)="logout()">Se deconnecter</button>
+
