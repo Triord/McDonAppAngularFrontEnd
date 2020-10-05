@@ -10,9 +10,7 @@
     <table class="table table-striped"  >
       <thead>
       <tr>
-        <th scope ="col">Jour de la semaine</th>
-        <th scope="col">De: </th>
-        <th scope="col">A: </th>
+        <th scope ="col"></th>
         <th scope="col">Nom : </th>
         <th scope="col">Prénom : </th>
 
@@ -23,74 +21,13 @@
 
       <tbody>
       <tr *ngFor="let d of dispo" >
-      <th scope ="row">Lundi</th>
+      <th scope ="row">Disponibilité de :</th>
 
-        <td>{{ d.lundi }}h</td>
-        <td>{{ d.lundi2}}h</td>
+
         <td >{{d.employee.nom}}</td>
         <td> {{d.employee.prenom}}</td>
-        <td><button class="btn btn-warning">Clique pour modif cette disponibilité</button></td>
+        <td><button class="btn btn-warning" [routerLink]="['/dispoDetails/'+d.idDispo] ">Clique pour modifier la disponibilité</button></td>
 
-      </tr>
-      <tr *ngFor="let d of dispo" >
-        <th scope ="row">Mardi</th>
-
-        <td>{{ d.mardi }}h</td>
-        <td>{{ d.mardi2}}h</td>
-        <td >{{d.employee.nom}}</td>
-        <td> {{d.employee.prenom}}</td>
-        <td><button class="btn btn-warning">Clique pour modif cette disponibilité</button></td>
-        </tr>
-
-        <tr *ngFor="let d of dispo" >
-          <th scope ="row">Mercredi</th>
-
-          <td>{{ d.mercredi }}h</td>
-          <td>{{ d.mercredi2}}h</td>
-          <td >{{d.employee.nom}}</td>
-          <td> {{d.employee.prenom}}</td>
-          <td><button class="btn btn-warning">Clique pour modif cette disponibilité</button></td>
-          </tr>
-
-          <tr *ngFor="let d of dispo" >
-            <th scope ="row">Jeudi</th>
-
-            <td>{{ d.jeudi }}h</td>
-            <td>{{ d.jeudi2}}h</td>
-            <td >{{d.employee.nom}}</td>
-            <td> {{d.employee.prenom}}</td>
-            <td><button class="btn btn-warning">Clique pour modif cette disponibilité</button></td>
-            </tr>
-
-            <tr *ngFor="let d of dispo" >
-              <th scope ="row">Vendredi</th>
-
-              <td>{{ d.vendredi }}h</td>
-              <td>{{ d.vendredi2}}h</td>
-              <td >{{d.employee.nom}}</td>
-              <td> {{d.employee.prenom}}</td>
-              <td><button class="btn btn-warning">Clique pour modif cette disponibilité</button></td>
-              </tr>
-
-              <tr *ngFor="let d of dispo " >
-                <th scope ="row">Samedi</th>
-
-                <td>{{ d.samedi}}h</td>
-                <td>{{ d.samedi2}}h</td>
-                <td >{{d.employee.nom}}</td>
-                <td> {{d.employee.prenom}}</td>
-                <td><button class="btn btn-warning">Clique pour modif cette disponibilité</button></td>
-                </tr>
-
-                <tr *ngFor="let d of dispo" >
-                  <th scope ="row">Dimanche</th>
-
-                  <td>{{ d.dimanche }}h</td>
-                  <td>{{ d.dimanche2}}h</td>
-                  <td >{{d.employee.nom}}</td>
-                  <td> {{d.employee.prenom}}</td>
-                  <td><button type="button" class="btn btn-warning">Clique pour modif cette disponibilité</button></td>
-                  </tr>
 
 
       </tbody>

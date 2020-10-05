@@ -24,8 +24,7 @@ export class DisponibiliteModifComponent implements OnInit {
         if(a.employee.nom > b.employee.nom) { return 1; }
         return 0;
     })
-      console.log("dispo",this.dispo);
-      console.log("emp",this.dispo[0]?.employee)
+
 
   }
   )};

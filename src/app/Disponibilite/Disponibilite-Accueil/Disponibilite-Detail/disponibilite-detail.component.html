@@ -1,0 +1,162 @@
+
+<table>
+  <tr>
+    <td>
+      <div class="jumbotron" style="width: 350px; height: 150px; padding-bottom: 50px;padding-top: 30px;" *ngIf="disp" >
+  <h4>Information de l'employée</h4>
+  <hr class="my-4">
+  <h6>Nom: {{disp.employee.nom}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Prénom:  {{disp.employee.prenom}}</h6>
+
+</div>
+    </td>
+  </tr>
+</table>
+
+  <form *ngIf="disp"  >
+
+
+      <div class="form-row" >
+    <div class="form-group col-md-6">
+      <label for="inputLundi"><strong>Lundi</strong></label>
+      <p> De :</p>
+      <input type="number" [(ngModel)]="dispo.lundi" class="form-control" name="inputLundi" placeholder={{disp.lundi}}H >
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputLundi2">&nbsp;</label>
+      <p> A :</p>
+      <input type="number" [(ngModel)]="dispo.lundi2" class="form-control" name="inputLundi2" placeholder={{disp.lundi2}}H>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputMardi"><strong>Mardi</strong></label>
+      <p> De :</p>
+      <input type="number" [(ngModel)]="dispo.mardi" class="form-control" name="inputMardi" placeholder={{disp.mardi}}H>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputMardi2">&nbsp;</label>
+      <p> A :</p>
+      <input type="number" [(ngModel)]="dispo.mardi2" class="form-control" name="inputMardi2" placeholder={{disp.mardi2}}H>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputMercredi"><strong>Mercredi</strong></label>
+      <p> De :</p>
+      <input type="number" [(ngModel)]="dispo.mercredi" class="form-control" name="inputMercredi" placeholder={{disp.mercredi}}H>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputMercredi2">&nbsp;</label>
+      <p> A :</p>
+      <input type="number" [(ngModel)]="dispo.mercredi2" class="form-control" name="inputMercredi2" placeholder={{disp.mercredi2}}H>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputJeudi"><strong>Jeudi</strong></label>
+      <p> De :</p>
+      <input type="number" [(ngModel)]="dispo.jeudi" class="form-control" name="inputJeudi" placeholder={{disp.jeudi}}H>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputJeudi2">&nbsp;</label>
+      <p> A :</p>
+      <input type="number" [(ngModel)]="dispo.jeudi2" class="form-control" name="inputJeudi2" placeholder={{disp.jeudi2}}H>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputVendredi"><strong>Vendredi</strong></label>
+      <p> De :</p>
+      <input type="number" [(ngModel)]="dispo.vendredi" class="form-control" name="inputVendredi" placeholder={{disp.vendredi}}H>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputVendredi2">&nbsp;</label>
+      <p> A :</p>
+      <input type="number" [(ngModel)]="dispo.vendredi2" class="form-control" name="inputVendredi2" placeholder={{disp.vendredi2}}H>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputSamedi"><strong>Samedi</strong></label>
+      <p> De :</p>
+      <input type="number" [(ngModel)]="dispo.samedi" class="form-control" name="inputSamedi" placeholder={{disp.samedi}}H>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputSamedi2">&nbsp;</label>
+      <p> A :</p>
+      <input type="number" [(ngModel)]="dispo.samedi2" class="form-control" name="inputSamedi2" placeholder={{disp.samedi2}}H>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputDimanche"><strong>Dimanche</strong></label>
+      <p> De :</p>
+      <input type="number" [(ngModel)]="dispo.dimanche" class="form-control" name="inputDimanche" placeholder={{disp.dimanche}}H>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputDimanche2">&nbsp;</label>
+      <p> A :</p>
+      <input type="number" [(ngModel)]="dispo.dimanche2" class="form-control" name="inputDimanche2" placeholder={{disp.dimanche2}}H>
+    </div>
+  </div>
+
+  <button class="btn btn-success" (click)="upDispok()">Apply modification</button>
+</form>
+
+
+
+
+
+<!-- Possibilité de select plusieurs choix
+
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputCity">City</label>
+        <input type="number" class="form-control" id="inputCity">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputState">State</label>
+        <select id="inputState" class="form-control">
+          <option selected>Choose...</option>
+          <option>...</option>
+        </select>
+      </div>
+      <div class="form-group col-md-2">
+        <label for="inputZip">Zip</label>
+        <input type="number" class="form-control" id="inputZip">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <label class="form-check-label" for="gridCheck">
+          Check me out
+        </label>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Sign in</button>
+  </form>
+
+</div>
+
+<form >
+<div class="form-group" >
+
+  <label for="nm">nom :</label>
+  <input type="nm" [(ngModel)]="dispo.lundi" placeholder="nom" name="nm" class="form-control" id="nm">
+</div>
+
+<div class="form-group">
+  <label for="prenom">prenom:</label>
+  <input [(ngModel)]="dispo.lundi2"  placeholder="prenom" name="prenom" class="form-control" id="prenom">
+</div>
+<button class="btn btn-success" (click)="upDispok()">Create</button>
+</form>
+-->

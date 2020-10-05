@@ -2,6 +2,7 @@ import { AuthenticationService, AUTHENTICATED_USER } from './../../Service/authe
 import { LoginComponent } from './../../Login/login/login.component';
 import { AppComponent } from './../../app.component';
 import { Component, OnInit } from '@angular/core';
+import { stringify } from 'querystring';
 
 
 @Component({
@@ -11,6 +12,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   l: boolean = false;
+  n: string ='test';
+
   constructor(private log: AuthenticationService) { }
 
   ngOnInit() {
@@ -22,5 +25,15 @@ export class HomeComponent implements OnInit {
     }
 
   }
+  changeColor(id){
+    document.getElementById(id).style.color = '#008000';
+
+    console.log(this.n);
+
+  }
+del(id){
+  document.getElementById(id).remove();
+}
+
 
 }

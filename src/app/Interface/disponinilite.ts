@@ -1,26 +1,29 @@
+import { Time } from '@angular/common';
 import { Employe } from './employe';
 
 export class Disponibilite{
-lundi: number;
-lundi2: number;
+idDispo: number;
 
-mardi: number;
-mardi2: number;
+lundi: Time;
+lundi2: Time;
 
-mercredi: number;
-mercredi2: number;
+mardi: Time;
+mardi2: Time;
 
-jeudi: number;
-jeudi2: number;
+mercredi: Time;
+mercredi2: Time;
 
-vendredi: number;
-vendredi2: number;
+jeudi: Time;
+jeudi2: Time;
 
-samedi: number;
-samedi2: number;
+vendredi: Time;
+vendredi2: Time;
 
-dimanche: number;
-dimanche2: number;
+samedi: Time;
+samedi2: Time;
+
+dimanche: Time;
+dimanche2: Time;
 
 
 employee: Employe;

@@ -18,8 +18,11 @@ export class HttpInterceptorAuthService implements HttpInterceptor {
 
 
     if (authHeaderString && username) {
+      /*
+      ---------AFFICHAGE DU TOKEN ENVOYE ----------
       console.log(authHeaderString);
       console.log(username);
+      */
       reqauth = req.clone({
         setHeaders: {
           Authorization: authHeaderString

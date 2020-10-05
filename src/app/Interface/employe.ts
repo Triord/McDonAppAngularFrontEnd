@@ -1,3 +1,8 @@
+import { DismissReasons } from 'ngx-bootstrap/modal/models';
+import { Disponibilite } from './disponinilite';
+import { Horaire } from './horaire';
+import { Semaine } from './semaine';
+
 export class Employe{
   idEmploye: number;
   nom: string;
@@ -7,4 +12,7 @@ export class Employe{
   mdp: string;
   nbrHeure: number;
   statut: boolean;
+  semaine: Semaine;
+  dispo: Disponibilite;
+  horaire: Horaire[]=[];
 }
