@@ -1,8 +1,29 @@
 .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
   background-color: rgb(182, 186, 248);
+  border: none;
 }
 .table-striped>tbody>tr:nth-child(even)>td,
 .table-striped>tbody>tr:nth-child(even)>th {
   background-color: hsl(111, 100%, 76%);
   color: rgb(0, 0, 0);
 }
+h1{
+  text-align: center;
+  margin: 25px;
+  color: rgb(41, 184, 184);
+  font-family: FreeMono, monospace;
+  }
+ .btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.active, .open>.dropdown-toggle.btn-warning {
+  color: #fff;
+  background-color: rgb(133,202, 93)!important;
+  border-color: white; /*set the color you want here*/
+  outline: none!important;
+  box-shadow: none !important;
+}
+.btn-warning {
+  color:  rgb(133,202, 93);
+  border-color:  rgb(191, 228, 118);
+  background-color: white!important;
+  outline: none!important;
+    box-shadow: none !important;
+  }

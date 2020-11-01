@@ -1,0 +1,33 @@
+<h1 *ngIf="disp" style="text-align: center; margin: 25px;color: rgb(41, 184, 184);font-family: FreeMono, monospace;" >Disponibilité de l'employé {{disp?.employee.prenom}}&nbsp;{{disp?.employee.nom}}</h1>
+
+<table class="table table-borderless">
+  <thead>
+  <tr>
+      <th scope="col">Lundi</th>
+      <th scope="col">Mardi</th>
+      <th scope="col">Mercredi</th>
+      <th scope="col">Jeudi</th>
+      <th scope="col">Vendredi</th>
+      <th scope="col">Samedi</th>
+      <th scope="col">Dimanche</th>
+  </tr>
+  </thead>
+
+  <tbody *ngIf="disp" >
+    <td *ngIf="disp.lundi; else elsel"  >De : {{disp?.lundi |slice:0:5}} A: {{disp?.lundi2|slice:0:5}}</td>
+    <td *ngIf="disp.mardi; else elsema" >De : {{disp?.mardi|slice:0:5}} A: {{disp?.mardi2|slice:0:5}}</td>
+    <td *ngIf="disp.mercredi; else elseme" >De : {{disp?.mercredi|slice:0:5}} A: {{disp?.mercredi2|slice:0:5}}</td>
+    <td *ngIf="disp.jeudi; else elsej" >De : {{disp?.jeudi|slice:0:5}} A: {{disp?.jeudi2|slice:0:5}}</td>
+    <td *ngIf="disp.vendredi; else elsev" >De : {{disp?.vendredi|slice:0:5}} A: {{disp?.vendredi2|slice:0:5}}</td>
+    <td *ngIf="disp.samedi; else elses" >De : {{disp?.samedi|slice:0:5}} A: {{disp?.samedi2|slice:0:5}}</td>
+    <td *ngIf="disp.dimanche; else elsed" >De : {{disp?.dimanche|slice:0:5}} A: {{disp?.dimanche2|slice:0:5}}</td>
+
+    <ng-template #elsel> <td>Null</td></ng-template>
+            <ng-template #elsema><td>Null</td> </ng-template>
+            <ng-template #elseme><td>Null</td></ng-template>
+            <ng-template #elsej><td>Null</td></ng-template>
+            <ng-template #elsev><td>Null</td></ng-template>
+            <ng-template #elses><td>Null</td></ng-template>
+            <ng-template #elsed><td>Null</td></ng-template>
+  </tbody>
+</table>

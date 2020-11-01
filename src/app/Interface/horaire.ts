@@ -1,3 +1,4 @@
+import { RaisonModif } from './raisonModif';
 import { Employe } from './employe';
 import { Time } from '@angular/common';
 
@@ -11,6 +12,9 @@ export class Horaire{
   employee: Employe;
   createBy: Employe;
   modifBy: Employe;
-  nbrHeureWeek: string;
-
+  nbrHeureDay: string;
+  heureCalculer: number;
+  minuteCalculer: number;
+  rm: RaisonModif;
+  statusHoraire: boolean;
 }

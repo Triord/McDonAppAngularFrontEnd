@@ -1,18 +1,23 @@
-.jumbotron{
-  background-color: white;
-  text-align: center;
+
+input[type=text]{
+  width: 650px;
 }
-.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open>.dropdown-toggle.btn-success {
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
   color: #fff;
   background-color: rgb(117, 79, 148)!important;
   border-color: white; /*set the color you want here*/
   outline: none!important;
   box-shadow: none !important;
+  margin-left: 25px;
+  margin-top: 6px;
 }
-.btn-success {
+.btn-primary {
 color:  rgb(117, 79, 148);
+float: right;
 border-color:  rgb(138, 101, 168);
 background-color: white!important;
 outline: none!important;
-  box-shadow: none !important;
+box-shadow: none !important;
+margin-left: 25px;
+margin-top: 6px;
 }

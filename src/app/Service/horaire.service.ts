@@ -15,7 +15,7 @@ const httpOptions = {
 export class HoraireService {
   private readonly noAuthreqHeader = new HttpHeaders({ 'No-Auth': 'True' });
   public readonly  AuthJSON = new HttpHeaders({ 'Content-Type': 'application/json' });
-  public readonly RootUrl: string = 'http://localhost:9999/';
+  public readonly RootUrl: string = 'http://127.0.0.1:9999/';
 
 
   constructor(private http: HttpClient, private datepipe: DatePipe) { }
@@ -31,10 +31,30 @@ export class HoraireService {
     return this.http.get<Horaire[]>(`${API_URL}horaireWent`, {params});
   }
   addSchedule(horaire){
-      console.log(JSON.stringify(horaire));
-      return this.http.post<Horaire>(`${API_URL}createSchedule`, horaire);
+      return this.http.post(`${API_URL}createSchedule`, horaire);
+  }
+  modifScheduleServ(horaire){
+    return this.http.put(`${API_URL}modifSchedule`, horaire );
   }
   getScheduleById(id: any){
     return this.http.get(`${API_URL}horaireById/${id}`);
+  }
+  getScheduleForModif(dateForModif: string, idEmpForModif: string){
+    const params = new HttpParams()
+    .set('dateForModif', dateForModif)
+    .set('idEmpForModif', idEmpForModif);
+    return this.http.get(`${this.RootUrl}modifThis`,{params});
+  }
+  saveModif(rm){
+    return this.http.post(`${API_URL}saveModif`, rm);
+  }
+  getAllModifDone(){
+    return this.http.get(`${API_URL}getModifDone`);
+  }
+  getModifById(id: any){
+    return this.http.get(`${API_URL}getModifById/${id}`);
+  }
+  removeThisSchedule(horaire){
+    return this.http.put(`${API_URL}removeThisSchedule`, horaire);
   }
 }

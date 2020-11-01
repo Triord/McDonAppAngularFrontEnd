@@ -6,3 +6,23 @@
   background-color: hsl(0, 57%, 51%);
   color: rgb(0, 0, 0);
 }
+.btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.active, .open>.dropdown-toggle.btn-warning {
+  color: rgb(2, 2, 2);
+  background-color: rgb(255, 237, 81)!important;
+  border-color: rgb(255, 200, 81); /*set the color you want here*/
+  outline: none!important;
+  box-shadow: none !important;
+}
+.btn-warning {
+  color:  rgb(250, 135, 41);
+  border-color:  rgb(250, 100, 50);
+  background-color: white!important;
+  outline: none!important;
+    box-shadow: none !important;
+  }
+  h1{
+    text-align: center;
+    margin: 25px;
+    color: rgb(41, 184, 184);
+    font-family: FreeMono, monospace;
+    }

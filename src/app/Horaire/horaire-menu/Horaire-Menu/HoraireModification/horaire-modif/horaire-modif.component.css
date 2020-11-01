@@ -1,0 +1,128 @@
+.div {
+    float: left;
+    width: 40%;
+    margin: 5px;
+    border-color: rgb(117, 79, 148);
+    border-radius: 10px;
+  }
+.div select, .div input{
+  margin: 25px;
+  border-color: rgb(117, 79, 148);
+  border-radius: 10px;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: rgb(117, 79, 148)!important;
+    border-color: white; /*set the color you want here*/
+    outline: none!important;
+    box-shadow: none !important;
+}
+.btn-primary {
+  color:  rgb(117, 79, 148);
+  float: right;
+  margin-top: 28px;
+  border-color:  rgb(138, 101, 168)!important;
+  background-color: white;
+  outline: none!important;
+  box-shadow: none !important;
+}
+h1{
+text-align: center;
+margin: 25px;
+color: rgb(41, 184, 184);
+font-family: FreeMono, monospace;
+}
+
+.div3 p{
+  clear: left;
+  color: #000;
+  text-align: center;
+  font-family: FreeMono, monospace;
+  font-weight: 900;
+}
+.div2{
+  float: left;
+}
+.div2 .btn-primary{
+  margin-top: 123px;
+}
+input[type=time]{
+  border: none;
+  color: #2a2c2d;
+  font-size: 14px;
+  font-family: helvetica;
+  width: 180px;
+
+}
+input::before {
+  color: #ff0000;
+}
+/* Wrapper around the hour, minute, second, and am/pm fields as well as
+the up and down buttons and the 'X' button */
+input[type=time]::-webkit-datetime-edit-fields-wrapper {
+  display: flex;
+}
+input[type=time]{
+  outline: none;
+
+}
+
+/* The space between the fields - between hour and minute, the minute and
+second, second and am/pm */
+input[type=time]::-webkit-datetime-edit-text {
+  padding: 19px 4px;
+
+
+}
+
+/* The naming convention for the hour, minute, second, and am/pm field is
+`-webkit-datetime-edit-{field}-field` */
+
+/* Hour */
+input[type=time]::-webkit-datetime-edit-hour-field {
+  background-color: #b6dcb6;
+  border-radius: 15%;
+  padding: 19px 13px;
+  color: #89949b;
+  outline: none;
+
+}
+input[type=text] {
+  border-color: rgb(117, 79, 148);
+  border-radius: 10px;
+  outline: none;
+}
+/* Minute */
+input[type=time]::-webkit-datetime-edit-minute-field {
+  background-color: #b6dcb6;
+  border-radius: 15%;
+  padding: 19px 13px;
+  color: #646e74;
+
+}
+input[type=time]::-webkit-datetime-edit-second-field {
+  background-color: #b6dcb6;
+  border-radius: 15%;
+  padding: 19px 13px;
+  color: #646e74;
+}
+
+/* AM/PM */
+input[type=time]::-webkit-datetime-edit-ampm-field {
+  background-color: #7155d3;
+  border-radius: 15%;
+  color: rgb(255, 255, 255);
+  padding: 19px 13px;
+}
+
+/* 'X' button for resetting/clearing time */
+input[type=time]::-webkit-clear-button {
+  display: flex;
+}
+
+/* Up/Down arrows for incrementing/decrementing the value */
+input[type=time]::-webkit-inner-spin-button {
+  display: flex;
+}
+
+

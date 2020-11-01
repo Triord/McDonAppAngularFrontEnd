@@ -1,0 +1,48 @@
+<h1>Panel Administrateur</h1>
+
+<table>
+  <tr>
+  <td>
+  <div class="jumbotron" style="width: 400px; height: 350px; ">
+    <h5>Voir qui a visionné un employé</h5>
+    <hr class="my-4">
+    <p>Voir qui a visionné les informations personnel d'un employé , ces informations seront composé de qui a effectué ce visionnage,
+      de pourquoi il l'a fait ainsi de la date du jour de visionnage . </p>
+    <button  type="button" class="btn btn-success"  [routerLink]="'/admin/panelList/raisonVisioEmpl'">Go on this</button>
+
+  </div>
+  </td>
+  <td>
+  <div class="jumbotron" style="width: 400px; height: 350px; ">
+    <h5>Voir qui a modifié un horaire</h5>
+    <hr class="my-4">
+    <p>Voir les modification effectué sur les differents horaire , ces informations seront composé de qui a effectué le changements ,
+       de pourquoi il la fait , de la date de la modification ainsi que de quel horaire il s'agit .</p>
+    <button type="button" class="btn btn-success" [routerLink]="'/admin/panelList/raisonModifHoraire'">Go on this</button>
+
+  </div>
+  </td>
+  <td>
+  <div class="jumbotron" style="width: 400px; height: 350px; ">
+    <h5>Passer un employé inactif</h5>
+    <hr class="my-4">
+    <p>Changer le statut d'un employé de inactif a actif ce changements permettra a l'employe de pouvoir réacceder a l'application mobile
+      ainsi que de se retrouver a nouveau dans les liste de creation d'horaire.
+    </p>
+    <button type="button" class="btn btn-success">Go on this</button>
+
+  </div>
+  </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="jumbotron" style="width: 400px; height: 350px; ">
+        <h5>Changer le contrat d'un employé</h5>
+        <hr class="my-4">
+        <p>Ce changements affectera le nombre d'heure de travail de l'employée</p>
+        <button type="button" class="btn btn-success">Go on this</button>
+
+      </div>
+      </td>
+  </tr>
+  </table>

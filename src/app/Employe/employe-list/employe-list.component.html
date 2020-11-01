@@ -1,0 +1,24 @@
+<h1  >Liste des employés</h1>
+
+<table *ngIf="employes" class="table table-hover">
+
+    <thead>
+      <tr>
+        <th scope="col">NOM</th>
+        <th scope="col">PRENOM</th>
+        <th scope="col">STATUT</th>
+        <th scope="col">&nbsp;</th>
+      </tr>
+    </thead>
+
+
+    <tbody *ngFor="let employe of employes" >
+      <tr>
+        <td>{{employe.nom}}</td>
+        <td>{{employe.prenom}}</td>
+        <td *ngIf="employe.statut" style="color: green;">ACTIVE</td>
+        <td *ngIf="!employe.statut" style="color: red;">INACTIVE</td>
+        <td><button class="btn btn-primary" [routerLink]="['/employe/list/thisEmp/'+employe.idEmploye]">More</button></td>
+      </tr>
+    </tbody>
+</table>

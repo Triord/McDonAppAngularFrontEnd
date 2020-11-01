@@ -30,5 +30,16 @@ export class EmployeeService {
     .set('id', id);
     return this.http.get<Employe>(`${API_URL}empForSchedule`, {params});
   }
-
+  getOneEmp(id:any){
+    return this.http.get(`${API_URL}employeOnId/${id}`);
+  }
+  getOneVisioEmp(id:any){
+    return this.http.get(`${API_URL}allVisioDone/${id}`);
+  }
+  saveRaisonViewedEmp(ve){
+    return this.http.post(`${API_URL}saveRaisonView`, ve);
+  }
+  allViewDone(){
+    return this.http.get(`${API_URL}allVisioDone`);
+  }
 }

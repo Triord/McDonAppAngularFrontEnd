@@ -1,6 +1,6 @@
 
 <ul ngbNav class="nav-tabs justify-content-center" style="padding-bottom: 20px; border-style: none;" >
-  <button type="button" class="btn btn-outline-info" style="outline-color: teal;" >Employée
+  <button type="button" class="btn btn-outline-info" style="outline-color: teal;"  [routerLink]="'/employe/list'">Employée
   </button>
   <button type="button" class="btn btn-outline-info" style="outline-color: teal;" >Congé
     <ng-template ngbNavContent>
@@ -17,12 +17,13 @@
       <p></p>
     </ng-template>
   </button>
-
-<button type="button" class="btn btn-outline-info" style="outline-color: teal;" >Inscription en attente
+<!--
+ <button type="button" class="btn btn-outline-info " style="outline-color: teal;" >Inscription en attente
   <ng-template ngbNavContent>
     <p></p>
   </ng-template>
 </button>
+-->
 <button type="button" class="btn btn-outline-info" style="outline-color: teal;">Question
   <ng-template ngbNavContent>
     <p></p>
@@ -39,6 +40,11 @@
   </ng-template>
 </button>
 <button type="button" class="btn btn-outline-info" style="outline-color: teal;">Gestion contrat
+  <ng-template ngbNavContent>
+    <p></p>
+  </ng-template>
+</button>
+<button type="button" class="btn btn-outline-info" [routerLink]="'/admin/panelList'" style="outline-color: teal;">Panel StoreManager
   <ng-template ngbNavContent>
     <p></p>
   </ng-template>

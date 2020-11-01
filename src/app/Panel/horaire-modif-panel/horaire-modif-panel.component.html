@@ -1,0 +1,23 @@
+<h1>Visionnage des modifications des horaires</h1>
+
+<table *ngIf="rm" class="table table-borderless">
+  <thead>
+    <tr>
+      <th scope="col">Horaire de :</th>
+      <th scope="col">Modifié par :</th>
+      <th scope="col">Jour de l'horaire modifié</th>
+      <th scope="col">Date de la modfification</th>
+      <th scope="col">Raison de la modification</th>
+    </tr>
+  </thead>
+
+  <tbody >
+    <tr *ngFor="let raisonModif of rm" >
+      <td *ngIf="raisonModif.raison" style="color: rgb(117, 79, 148);">{{raisonModif.horaire?.employee?.nom|uppercase}} {{raisonModif.horaire?.employee?.prenom|uppercase}}</td>
+      <td *ngIf="raisonModif.raison">{{raisonModif.employe?.nom|uppercase}}{{raisonModif.employe?.prenom|uppercase}}</td>
+      <td *ngIf="raisonModif.raison" >{{raisonModif.horaire?.dateJour|date:'EEEE dd/MM/yyyy'}}</td>
+      <td *ngIf="raisonModif.raison">{{raisonModif.dateModif|date:'EEEE dd/MM/yyyy'}}</td>
+      <td *ngIf="raisonModif.raison">{{raisonModif.raison}}</td>
+    </tr>
+  </tbody>
+</table>

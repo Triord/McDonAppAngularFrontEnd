@@ -1,0 +1,42 @@
+<h1 *ngIf="employe" style="text-align: center; margin: 25px;color: rgb(41, 184, 184);font-family: FreeMono, monospace;" >Détails de l'employé {{employe.prenom}}&nbsp;{{employe.nom}}</h1>
+
+<div class="form-group" *ngIf="!isSend" >
+  <label>Raison</label>
+  <div class="form-inline">
+  <input [(ngModel)]="ve.raisonView" type="text" class="form-control" id="SendRaison" placeholder="Entrer une raison" >
+  <button class="btn btn-primary mb-2" (click)="submitRaison()">Valider</button></div>
+  <small id="sendRaison" class="form-text text-muted">Entrer une raison et valider pour acceder au info.</small>
+
+</div>
+
+<table class="table table-borderless" *ngIf="isSend" >
+  <thead>
+  <tr>
+      <th scope="col" >Nom</th>
+      <th scope="col">Prenom</th>
+      <th scope="col">Email</th>
+      <th scope="col">Date de naissance</th>
+      <th scope="col">Nombre d'heure contrat</th>
+
+  </tr>
+  </thead>
+
+  <tbody *ngIf="employe" >
+    <td >{{employe.nom}}</td>
+    <td>{{employe.prenom}}</td>
+    <td *ngIf="employe.statut">{{employe.email}}</td>
+    <td *ngIf="employe.statut" >{{employe.ddn|date : 'dd-MM-yyyy'}}</td>
+    <td *ngIf="employe.statut" >{{employe.nbrHeure}}</td>
+
+    <td *ngIf="!employe.statut" >**********************</td>
+    <td *ngIf="!employe.statut" >**********************</td>
+    <td *ngIf="!employe.statut" >**********************</td>
+
+    <!--
+      CREER BOUTON DEMISSIONNER DANS MACDONAPPMOBILE
+      POSSIBILITE DE MODIFIER UN HORAIRE EN CHANGEANT L EMPLOYE QUI TRAVAILLE
+      RAJOUTER UNE COLONNE DANS LA TABLE RM(modifRaison) ET LA SUITE AUSSI QUOI
+    -->
+
+  </tbody>
+</table>

@@ -43,6 +43,8 @@ export class HoraireVisioComponent implements OnInit {
 
   getHoraireBtwnDate(){
 
+
+
     const inputElement: HTMLInputElement = document.getElementById('dateSel1') as HTMLInputElement;
     const inputValue: string = inputElement.value;
     const inputElement2: HTMLInputElement = document.getElementById('dateSel2') as HTMLInputElement;
@@ -86,21 +88,26 @@ export class HoraireVisioComponent implements OnInit {
     this.empS.getAllEmploye().subscribe((response: Employe[])=>{
       this.employe = response;
       console.log(this.employe);
-
-      this.horS.getHoraire(dateRecherche as unknown as string, this.dateOut as unknown as string).subscribe((data: any) =>{
-      this.horaire = data;
-      console.log('tous les horaire', this.horaire)
-
+      this.employe.sort(function(a, b){
+        if(a.nom < b.nom ) { return -1; }
+        if(a.nom > b.nom) { return 1; }
+        return 0;
+    })
       this.employe.forEach(employe => {
         employe.semaine = new Semaine();
 
       });
+      this.horS.getHoraire(dateRecherche as unknown as string, this.dateOut as unknown as string).subscribe((data: any) =>{
+      this.horaire = data;
+      console.log('tous les horaire', this.horaire)
+
+
       this.horaire.forEach(h => {
         if(Number.isInteger(h as unknown as number)){
           this.horS.getScheduleById(h).subscribe((data: any)=>{
             h = data;
             console.log('horaire hash is',h);
-            this.employe.find(employe => employe?.idEmploye === h.employee?.idEmploye).horaire.push(h);
+            this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).horaire.push(h);
 
             h.dateJour = moment(h.dateJour).format('YYYY-MM-DD') as unknown as Date;
             this.lundi = moment(this.lundi).format('YYYY-MM-DD') as unknown as Date;
@@ -140,40 +147,40 @@ export class HoraireVisioComponent implements OnInit {
         }
         if(!Number.isInteger(h as unknown as number)){
 
-        this.employe.find(employe => employe?.idEmploye === h?.employee?.idEmploye)?.horaire?.push(h);
-        h.dateJour = moment(h.dateJour).format('YYYY-MM-DD') as unknown as Date;
-        this.lundi = moment(this?.lundi).format('YYYY-MM-DD') as unknown as Date;
-        this.mardi = moment(this?.mardi).format('YYYY-MM-DD') as unknown as Date;
-        this.mercredi = moment(this?.mercredi).format('YYYY-MM-DD') as unknown as Date;
-        this.jeudi = moment(this?.jeudi).format('YYYY-MM-DD') as unknown as Date;
-        this.vendredi = moment(this?.vendredi).format('YYYY-MM-DD') as unknown as Date;
-        this.samedi = moment(this?.samedi).format('YYYY-MM-DD') as unknown as Date;
-        this.dimanche = moment(this?.dimanche).format('YYYY-MM-DD') as unknown as Date;
+
+            h.dateJour = moment(h.dateJour).format('YYYY-MM-DD') as unknown as Date;
+            this.lundi = moment(this.lundi).format('YYYY-MM-DD') as unknown as Date;
+            this.mardi = moment(this.mardi).format('YYYY-MM-DD') as unknown as Date;
+            this.mercredi = moment(this.mercredi).format('YYYY-MM-DD') as unknown as Date;
+            this.jeudi = moment(this.jeudi).format('YYYY-MM-DD') as unknown as Date;
+            this.vendredi = moment(this.vendredi).format('YYYY-MM-DD') as unknown as Date;
+            this.samedi = moment(this.samedi).format('YYYY-MM-DD') as unknown as Date;
+            this.dimanche = moment(this.dimanche).format('YYYY-MM-DD') as unknown as Date;
 
 
-        if(h.dateJour === this.lundi){
+            if(h.dateJour === this.lundi){
         this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.lundi = h;
       }
-        if(h.dateJour === this.mardi){
+            if(h.dateJour === this.mardi){
         this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.mardi = h;
       }
-        if(h.dateJour === this.mercredi){
+            if(h.dateJour === this.mercredi){
         this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.mercredi = h;
       }
-        if(h.dateJour === this.jeudi){
+            if(h.dateJour === this.jeudi){
         this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.jeudi = h;
       }
-        if(h.dateJour === this.vendredi){
+            if(h.dateJour === this.vendredi){
         this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.vendredi = h;
       }
-        if(h.dateJour === this.samedi){
+            if(h.dateJour === this.samedi){
         this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.samedi = h;
       }
-        if(h.dateJour === this.dimanche){
+            if(h.dateJour === this.dimanche){
         this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.dimanche = h;
       }
-        console.log(this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine)
-        }
+
+    }
     });
 
       console.log(this.employe);

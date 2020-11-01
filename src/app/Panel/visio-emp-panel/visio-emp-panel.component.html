@@ -1,0 +1,22 @@
+<h1>Apercu des visionnages effectué par les managers</h1>
+
+<table *ngIf="ve" class="table table-borderless">
+  <thead>
+    <tr>
+      <th scope="col">Employe visionné est :</th>
+      <th scope="col">Visionné  par :</th>
+      <th scope="col">Jour du visionnage</th>
+      <th scope="col">Raison de la modification</th>
+    </tr>
+  </thead>
+
+  <tbody >
+    <tr *ngFor="let empVisio of ve" >
+      <td *ngIf="empVisio.raisonView" style="color: rgb(117, 79, 148);">{{empVisio.employeView?.nom|uppercase}} {{empVisio.employeView?.prenom|uppercase}}</td>
+      <td *ngIf="empVisio.raisonView">{{empVisio.manaWhoViewed?.nom|uppercase}}{{empVisio.manaWhoViewed?.prenom|uppercase}}</td>
+      <td *ngIf="empVisio.raisonView" >{{empVisio.dateView|date:'EEEE dd/MM/yyyy'}}</td>
+      <td *ngIf="empVisio.raisonView">{{empVisio.raisonView}}</td>
+    </tr>
+  </tbody>
+</table>
+

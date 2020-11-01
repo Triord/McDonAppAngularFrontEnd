@@ -1,3 +1,9 @@
+h1{
+  text-align: center;
+  margin: 25px;
+  color: rgb(41, 184, 184);
+  font-family: FreeMono, monospace;
+  }
 .jumbotron{
   background-color: white;
   text-align: center;
@@ -11,9 +17,8 @@
 }
 .btn-success {
 color:  rgb(117, 79, 148);
-border-color:  rgb(138, 101, 168)!important;
-background-color: white;
+border-color:  rgb(138, 101, 168);
+background-color: white!important;
 outline: none!important;
-box-shadow: none !important;
+  box-shadow: none !important;
 }
-

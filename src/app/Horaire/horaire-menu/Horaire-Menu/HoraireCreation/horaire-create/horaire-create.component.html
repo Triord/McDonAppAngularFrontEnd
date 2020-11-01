@@ -1,6 +1,6 @@
-<p>Connecté sur le profil de {{currentUser}}</p>
+<!--<p>Connecté sur le profil de {{currentUser}}</p>-->
 
-<h4 style="text-align: center;margin: 40px;">Création d'un horaire</h4>
+<h1>Création d'un horaire</h1>
 <div class="container">
   <div class="div">
 
@@ -47,8 +47,8 @@
 </div>
 
 
-<div class="div">
-  <table class="table" style="margin-top: 35px;" >
+<div class="div" >
+  <table class="table table-borderless" style="margin-top: 35px;" >
     <thead >
       <tr >
         <th scope="col" style="width: 10px;" >Nom et prenom</th>
@@ -59,28 +59,39 @@
         <th scope="col">{{vendredi | date : 'EEEE dd/MM/yyyy'}}</th>
         <th scope="col">{{samedi | date : 'EEEE dd/MM/yyyy'}}</th>
         <th scope="col">{{dimanche | date : 'EEEE dd/MM/yyyy'}}</th>
-        <th scope="col">Nbr h/semaine</th>
+        <!-- A terminer !!! <th scope="col">Nbr h/semaine</th>-->
 
       </tr>
       </thead>
 
       <tbody>
-        <tr *ngFor="let e of employe; let i = index" >
+        <tr *ngFor="let e of employe" >
 
           <ng-container *ngIf="e.horaire.length>0" >
             <td>{{e.nom}}<br> {{e.prenom}}</td>
-                <td *ngIf="e.semaine?.lundi !== null; else lu"  >{{e.semaine.lundi?.heureDebut }} <br> {{e.semaine.lundi?.heureFin}} <br *ngIf="e.semaine.lundi.heureDebut2"> {{e.semaine.lundi?.heureDebut2}} <br> {{e.semaine.lundi?.heureFin2}}</td>
-                <td *ngIf="e.semaine?.mardi !== null; else ma">{{e.semaine.mardi?.heureDebut}}<br>  {{e.semaine.mardi?.heureFin}} <br *ngIf="e.semaine.mardi.heureDebut2"> {{e.semaine.mardi?.heureDebut2}} <br> {{e.semaine.mardi?.heureFin2}}</td>
-                <td *ngIf="e.semaine?.mercredi !== null; else me">{{e.semaine.mercredi?.heureDebut}}<br> {{e.semaine.mercredi?.heureFin}} <br *ngIf="e.semaine.mercredi.heureDebut2"> {{e.semaine.mercredi?.heureDebut2}} <br> {{e.semaine.mercredi?.heureFin2}}</td>
-                <td *ngIf="e.semaine?.jeudi !== null; else je">{{e.semaine.jeudi?.heureDebut}} <br> {{e.semaine.jeudi?.heureFin}}<br *ngIf="e.semaine.jeudi.heureDebut2"> {{e.semaine.jeudi?.heureDebut2}} <br> {{e.semaine.jeudi?.heureFin2}}</td>
-                <td *ngIf="e.semaine?.vendredi !== null; else ve">{{e.semaine.vendredi?.heureDebut}}<br> {{e.semaine.vendredi?.heureFin}}<br *ngIf="e.semaine.vendredi.heureDebut2" > et {{e.semaine.vendredi?.heureDebut2}} <br> {{e.semaine.vendredi?.heureFin2}}</td>
-                <td *ngIf="e.semaine?.samedi !== null; else sa">{{e.semaine.samedi?.heureDebut}}<br>  {{e.semaine.samedi?.heureFin}}  <br *ngIf="e.semaine.samedi.heureDebut2"> {{e.semaine.samedi?.heureDebut2}} <br> {{e.semaine.samedi?.heureFin2}}</td>
-                <td *ngIf="e.semaine?.dimanche !== null; else di">{{e.semaine.dimanche?.heureDebut}}<br>  {{e.semaine.dimanche?.heureFin}} <br *ngIf="e.semaine.dimanche.heureDebut2"> {{e.semaine.dimanche?.heureDebut2}} <br> {{e.semaine.dimanche?.heureFin2}}</td>
-                <td ></td>
+                <td *ngIf="e?.semaine?.lundi !== null; else lu"  >{{e?.semaine?.lundi?.heureDebut }} <br> {{e?.semaine?.lundi?.heureFin}} <br *ngIf="e?.semaine?.lundi.heureDebut2"> {{e?.semaine?.lundi?.heureDebut2}} <br> {{e.semaine?.lundi?.heureFin2}}</td>
+                <td *ngIf="e?.semaine?.mardi !== null; else ma">{{e?.semaine?.mardi?.heureDebut}}<br>  {{e?.semaine?.mardi?.heureFin}} <br *ngIf="e?.semaine?.mardi.heureDebut2"> {{e?.semaine?.mardi?.heureDebut2}} <br> {{e.semaine?.mardi?.heureFin2}}</td>
+                <td *ngIf="e?.semaine?.mercredi !== null; else me">{{e?.semaine?.mercredi?.heureDebut}}<br> {{e?.semaine?.mercredi?.heureFin}} <br *ngIf="e?.semaine?.mercredi.heureDebut2"> {{e?.semaine?.mercredi?.heureDebut2}} <br> {{e.semaine?.mercredi?.heureFin2}}</td>
+                <td *ngIf="e?.semaine?.jeudi !== null; else je">{{e?.semaine?.jeudi?.heureDebut}} <br> {{e?.semaine?.jeudi?.heureFin}}<br *ngIf="e?.semaine?.jeudi.heureDebut2"> {{e.semaine?.jeudi?.heureDebut2}} <br> {{e.semaine?.jeudi?.heureFin2}}</td>
+                <td *ngIf="e?.semaine?.vendredi !== null; else ve">{{e?.semaine?.vendredi?.heureDebut}}<br> {{e?.semaine?.vendredi?.heureFin}}<br *ngIf="e?.semaine?.vendredi.heureDebut2" > et {{e?.semaine?.vendredi?.heureDebut2}} <br> {{e.semaine?.vendredi?.heureFin2}}</td>
+                <td *ngIf="e?.semaine?.samedi !== null; else sa">{{e?.semaine?.samedi?.heureDebut}}<br>  {{e?.semaine?.samedi?.heureFin}}  <br *ngIf="e?.semaine?.samedi.heureDebut2"> {{e?.semaine?.samedi?.heureDebut2}} <br> {{e.semaine?.samedi?.heureFin2}}</td>
+                <td *ngIf="e?.semaine?.dimanche !== null; else di">{{e?.semaine?.dimanche?.heureDebut}}<br>  {{e?.semaine?.dimanche?.heureFin}} <br *ngIf="e?.semaine?.dimanche.heureDebut2"> {{e?.semaine?.dimanche?.heureDebut2}} <br> {{e.semaine?.dimanche?.heureFin2}}</td>
+               <!-- A faire !!! <td  >
+
+                  {{e?.semaine?.lundi?.heureCalculer*1 +  e?.semaine?.mardi?.heureCalculer*1  +  e?.semaine?.mercredi?.heureCalculer*1  +  e?.semaine?.jeudi?.heureCalculer*1  +
+                   e?.semaine?.vendredi?.heureCalculer*1  +  e?.semaine?.samedi?.heureCalculer*1  +  e?.semaine?.dimanche?.heureCalculer*1 }} Heures
+
+                   {{e?.semaine?.lundi?.minuteCalculer*1 +  e?.semaine?.mardi?.minuteCalculer*1  +  e?.semaine?.mercredi?.minuteCalculer*1  +  e?.semaine?.jeudi?.minuteCalculer*1  +
+                    e?.semaine?.vendredi?.minuteCalculer*1  +  e?.semaine?.samedi?.minuteCalculer*1  +  e?.semaine?.dimanche?.minuteCalculer*1  }} minutes
+                </td>-->
+
+
+
 
           </ng-container>
 
         </tr>
+
             <ng-template #lu> <td>///////////////</td></ng-template>
             <ng-template #ma><td>////////////////</td> </ng-template>
             <ng-template #me><td>////////////////</td></ng-template>
@@ -94,7 +105,6 @@
   </table>
   <button class="btn btn-primary" style="margin: 10px;" (click)="showData(); createSchedule()">Créer !</button>
     <button class="btn btn-primary" (click)="reloadComponent()">Vider tous les champs</button>
-    <button class= "btn-primary" (click)="checkHour()">method test</button>
   <div style="clear:both; font-size:1px;"></div>
 </div>
 </div>

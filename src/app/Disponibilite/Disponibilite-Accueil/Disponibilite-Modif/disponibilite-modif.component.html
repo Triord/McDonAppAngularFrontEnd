@@ -1,18 +1,17 @@
 <div class="row h-100">
   <div class="col-sm-12 my-auto">
-<div class="alert alert-success" role="alert" style="text-align: center;" >
- <h3>Choisissez quel disponibilité modifier</h3>
-</div>
+ <h1>Choisissez quel disponibilité modifier</h1>
+
 </div>
 </div>
 <p  *ngFor="let d of dispo; let i = index"></p>
 
-    <table class="table table-striped"  >
+    <table class="table table-borderless"  >
       <thead>
       <tr>
-        <th scope ="col"></th>
-        <th scope="col">Nom : </th>
-        <th scope="col">Prénom : </th>
+        <th scope ="col" style="border: none;"></th>
+        <th scope="col" style="border: none;">Nom : </th>
+        <th scope="col" style="border: none;">Prénom : </th>
 
       </tr>
       </thead>
@@ -21,15 +20,16 @@
 
       <tbody>
       <tr *ngFor="let d of dispo" >
+        <ng-container *ngIf="d.employee" >
       <th scope ="row">Disponibilité de :</th>
 
 
-        <td >{{d.employee.nom}}</td>
-        <td> {{d.employee.prenom}}</td>
+        <td >{{d?.employee?.nom}}</td>
+        <td> {{d?.employee?.prenom}}</td>
         <td><button class="btn btn-warning" [routerLink]="['/dispoDetails/'+d.idDispo] ">Clique pour modifier la disponibilité</button></td>
 
 
-
+</ng-container>
       </tbody>
     </table>
     <br>

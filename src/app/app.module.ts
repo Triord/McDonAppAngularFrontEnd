@@ -1,3 +1,6 @@
+import { HoraireModifPanelComponent } from './Panel/horaire-modif-panel/horaire-modif-panel.component';
+import { VisioEmpPanelComponent } from './Panel/visio-emp-panel/visio-emp-panel.component';
+
 import { HoraireService } from './Service/horaire.service';
 
 import { HoraireMenuComponent } from './Horaire/horaire-menu/Horaire-Menu/HoraireMenu/horaire-menu.component';
@@ -33,6 +36,10 @@ import { HoraireCreateComponent } from './Horaire/horaire-menu/Horaire-Menu/Hora
 import { HoraireVisioComponent } from './Horaire/horaire-menu/Horaire-Menu/HoraireVisionnage/horaire-visio/horaire-visio.component';
 import localeFr from '@angular/common/locales/fr';
 import { DatePipe, registerLocaleData } from '@angular/common';
+import { DisponibiliteEmployeComponent } from './Disponibilite/Disponibilite-Accueil/Disponibilite-Employe/disponibilite-employe/disponibilite-employe.component';
+import { EmployeListComponent } from './Employe/employe-list/employe-list.component';
+import { EmployeInfoComponent } from './Employe/employe-info/employe-info.component';
+import { PanelListComponent } from './Panel/panel-list/panel-list.component';
 registerLocaleData(localeFr);
 
 
@@ -44,11 +51,18 @@ const routes: Routes = [
   { path: 'dispoMenu', component: DisponibiliteAccueilComponent},
   { path: 'dispoList', component: DisponibiliteListComponent},
   { path: 'dispoModif', component: DisponibiliteModifComponent},
-  {path: 'dispoDetails/:id', component: DisponibiliteDetailComponent},
-  {path: 'horaireMenu', component: HoraireMenuComponent},
-  {path: 'horaireVue', component: HoraireVisioComponent},
-  {path: 'horaireCreation', component: HoraireCreateComponent},
-  {path: 'horaireModification', component: HoraireModifComponent}
+  { path: 'dispoDetails/:id', component: DisponibiliteDetailComponent},
+  { path: 'horaireMenu', component: HoraireMenuComponent},
+  { path: 'horaireVue', component: HoraireVisioComponent},
+  { path: 'horaireCreation', component: HoraireCreateComponent},
+  { path: 'horaireModification', component: HoraireModifComponent},
+  { path: 'dispoThisEmp/:id', component: DisponibiliteEmployeComponent},
+  { path: 'employe/list', component: EmployeListComponent},
+  { path: 'employe/list/thisEmp/:id', component: EmployeInfoComponent},
+  { path: 'admin/panelList', component: PanelListComponent},
+  { path: 'admin/panelList/raisonVisioEmpl', component: VisioEmpPanelComponent},
+  { path: 'admin/panelList/raisonModifHoraire', component: HoraireModifPanelComponent},
+  { path: '', component: HomeComponent },
 ];
 
 @NgModule({
@@ -63,7 +77,13 @@ const routes: Routes = [
     HoraireMenuComponent,
     HoraireModifComponent,
     HoraireCreateComponent,
-    HoraireVisioComponent
+    HoraireVisioComponent,
+    DisponibiliteEmployeComponent,
+    EmployeListComponent,
+    EmployeInfoComponent,
+    PanelListComponent,
+    VisioEmpPanelComponent,
+    HoraireModifPanelComponent,
   ],
   imports: [
     BrowserModule,

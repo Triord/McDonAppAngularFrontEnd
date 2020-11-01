@@ -18,14 +18,24 @@ export class DisponibiliteModifComponent implements OnInit {
   getAllDispo(){
 
     this.dispoS.getAllDispo().subscribe((reponse: Disponibilite[]) => {
+
       this.dispo = reponse;
+      this.dispo.forEach(d=>{
+        if (Number.isInteger(d as unknown as number)) {
+          this.dispoS.getOneDispo(d).subscribe((data: any)=>{
+            console.log(data)
+            this.dispo.push(data);
+          })
+        }
+      })
       this.dispo.sort(function(a, b){
-        if(a.employee.nom < b.employee.nom ) { return -1; }
-        if(a.employee.nom > b.employee.nom) { return 1; }
+        if(a.employee?.nom < b.employee?.nom ) { return -1; }
+        if(a.employee?.nom > b.employee?.nom) { return 1; }
         return 0;
     })
+      console.log("dispo",this.dispo);
+      console.log("emp",this.dispo[0]?.employee)
 
-
-  }
+    }
   )};
 }
