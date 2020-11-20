@@ -19,6 +19,7 @@ export class EmployeInfoComponent implements OnInit {
     const id = this.route.snapshot.params.id;
     this.empS.getOneEmp(id).subscribe((data: Employe) => {
       this.employe = data;
+      console.log(this.employe)
     });
   }
   submitRaison(){

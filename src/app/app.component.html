@@ -2,7 +2,7 @@
 <ul ngbNav class="nav-tabs justify-content-center" style="padding-bottom: 20px; border-style: none;" >
   <button type="button" class="btn btn-outline-info" style="outline-color: teal;"  [routerLink]="'/employe/list'">Employée
   </button>
-  <button type="button" class="btn btn-outline-info" style="outline-color: teal;" >Congé
+  <button type="button" class="btn btn-outline-info"[routerLink]="'/conge/listConge'" style="outline-color: teal;" >Congé
     <ng-template ngbNavContent>
       <p></p>
     </ng-template>
@@ -39,11 +39,7 @@
     <p></p>
   </ng-template>
 </button>
-<button type="button" class="btn btn-outline-info" style="outline-color: teal;">Gestion contrat
-  <ng-template ngbNavContent>
-    <p></p>
-  </ng-template>
-</button>
+
 <button type="button" class="btn btn-outline-info" [routerLink]="'/admin/panelList'" style="outline-color: teal;">Panel StoreManager
   <ng-template ngbNavContent>
     <p></p>

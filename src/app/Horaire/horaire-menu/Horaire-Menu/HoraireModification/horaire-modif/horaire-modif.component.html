@@ -18,7 +18,7 @@
 
 
 <div class="div3" *ngIf="horaire">
-<p>Affichage de l'horaire du {{horaire?.dateJour |date:'EEEE dd-MM-yyyy' |uppercase}} pour l'employé(e) {{horaire?.employee?.nom |uppercase}} {{horaire?.employee?.prenom |uppercase}}</p>
+<p>Affichage de l'horaire du {{horaire?.dateJour |date:'EEEE dd-MM-yyyy' |uppercase}} pour l'employé(e) {{horaire?.employeeFromHoraire?.nom |uppercase}} {{horaire?.employeeFromHoraire?.prenom |uppercase}}</p>
 </div>
 <div class="div2" *ngIf="horaire"  >
 
@@ -26,10 +26,12 @@
   <h6>[Première horaire]</h6>
   <label >De:</label>
   <input [(ngModel)]="horaire.heureDebut" type="time" id="hd" name="appt"  step="1"  required   >
+  <p *ngIf="!verifDisp" >l'utilisateur n est pas disponible pour les heure entrée</p>
 </div>
 <div class="form-group" style="width: 300px;">
   <label >A:&nbsp;&nbsp;</label>
   <input [(ngModel)]="horaire.heureFin" type="time" id="hf" name="appt"  step="1" required   >
+    <p *ngIf="!verifDisp" >l'utilisateur n est pas disponible pour les heure entrée</p>
 </div>
 </div>
 <div class="div2" *ngIf="horaire" >

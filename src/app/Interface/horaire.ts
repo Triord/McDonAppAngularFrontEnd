@@ -9,7 +9,7 @@ export class Horaire{
   heureFin: Time;
   heureDebut2: Time;
   heureFin2: Time;
-  employee: Employe;
+  employeeFromHoraire: Employe;
   createBy: Employe;
   modifBy: Employe;
   nbrHeureDay: string;

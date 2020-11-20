@@ -1,0 +1,95 @@
+h1{
+  text-align: center;
+  margin: 25px;
+  color: rgb(41, 184, 184);
+  font-family: FreeMono, monospace;
+  margin-bottom: 60px;
+}
+#nom{
+  float: right;
+}
+#prenom{
+  float: left;
+}
+#roleActuel{
+  text-align: center;
+}
+#first:hover, #first:focus, #first:active, #first.active, .open>.dropdown-toggle#first {
+  color: #fff;
+  background-color: rgb(117, 79, 148)!important;
+  border-color: white; /*set the color you want here*/
+  outline: none!important;
+  box-shadow: none !important;
+}
+#first {
+color:  rgb(117, 79, 148);
+border-color:  rgb(138, 101, 168)!important;
+background-color: white;
+outline: none!important;
+box-shadow: none !important;
+padding-right: 30px;
+padding-left: 30px;
+margin: 10px;
+margin-right: 200px;
+float: left;
+}
+#four:hover, #four:focus, #four:active, #four.active, .open>.dropdown-toggle#four {
+  color: #fff;
+  background-color: rgb(117, 79, 148)!important;
+  border-color: white; /*set the color you want here*/
+  outline: none!important;
+  box-shadow: none !important;
+}
+#four {
+color:  rgb(117, 79, 148);
+border-color:  rgb(138, 101, 168)!important;
+background-color: white;
+outline: none!important;
+box-shadow: none !important;
+padding-right: 30px;
+padding-left: 30px;
+margin: 10px;
+margin-left: 200px;
+float: right;
+}
+#two:hover, #two:focus, #two:active, #two.active, .open>.dropdown-toggle#two {
+  color: #fff;
+  background-color: rgb(117, 79, 148)!important;
+  border-color: white; /*set the color you want here*/
+  outline: none!important;
+  box-shadow: none !important;
+}
+#two {
+color:  rgb(117, 79, 148);
+border-color:  rgb(138, 101, 168)!important;
+background-color: white;
+outline: none!important;
+box-shadow: none !important;
+padding-right: 30px;
+padding-left: 30px;
+margin: 10px;
+float: left;
+}
+#three:hover, #three:focus, #three:active, #three.active, .open>.dropdown-toggle#three {
+  color: #fff;
+  background-color: rgb(117, 79, 148)!important;
+  border-color: white; /*set the color you want here*/
+  outline: none!important;
+  box-shadow: none !important;
+}
+#three {
+color:  rgb(117, 79, 148);
+border-color:  rgb(138, 101, 168)!important;
+background-color: white;
+outline: none!important;
+box-shadow: none !important;
+padding-right: 30px;
+padding-left: 30px;
+margin: 10px;
+float: right;
+
+}
+
+
+
+

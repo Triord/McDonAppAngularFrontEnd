@@ -1,0 +1,81 @@
+h1{
+  text-align: center;
+  margin: 25px;
+  color: rgb(41, 184, 184);
+  font-family: FreeMono, monospace;
+  margin-bottom: 60px;
+}
+#nom{
+  float: right;
+}
+#prenom{
+  float: left;
+}
+#contratActuel{
+  text-align: center;
+}
+#etudiant{
+margin-top: 50px;
+float: left;
+width: 300px;
+border-radius: 6px;
+color: rgb(117, 79, 148);
+background-color: white;
+border-color: rgb(117, 79, 148);
+}
+#etudiant:hover, #etudiant:focus, #etudiant:active, #etudiant.active, .open>.dropdown-toggle#etudiant {
+  color: #fff;
+  background-color: rgb(117, 79, 148)!important;
+  border-color: white; /*set the color you want here*/
+  outline: none!important;
+  box-shadow: none !important;
+}
+#ouvrier10h{
+margin-top: 50px;
+float: right;
+width: 300px;
+border-radius: 6px;
+color: rgb(117, 79, 148);
+background-color: white;
+border-color: rgb(117, 79, 148);
+}
+#ouvrier10h:hover, #ouvrier10h:focus, #ouvrier10h:active, #ouvrier10h.active, .open>.dropdown-toggle#ouvrier10h {
+  color: #fff;
+  background-color: rgb(117, 79, 148)!important;
+  border-color: white; /*set the color you want here*/
+  outline: none!important;
+  box-shadow: none !important;
+}
+#ouvrier20h{
+margin-top: 50px;
+clear: both;
+float: left;
+width: 300px;
+border-radius: 6px;
+color: rgb(117, 79, 148);
+background-color: white;
+border-color: rgb(117, 79, 148);
+}
+#ouvrier20h:hover, #ouvrier20h:focus, #ouvrier20h:active, #ouvrier20h.active, .open>.dropdown-toggle#ouvrier20h {
+  color: #fff;
+  background-color: rgb(117, 79, 148)!important;
+  border-color: white; /*set the color you want here*/
+  outline: none!important;
+  box-shadow: none !important;
+}
+#ouvrier28h{
+margin-top: 50px;
+float: right;
+width: 300px;
+border-radius: 6px;
+color: rgb(117, 79, 148);
+background-color: white;
+border-color: rgb(117, 79, 148);
+}
+#ouvrier28h:hover, #ouvrier28h:focus, #ouvrier28h:active, #ouvrier28h.active, .open>.dropdown-toggle#ouvrier28h {
+  color: #fff;
+  background-color: rgb(117, 79, 148)!important;
+  border-color: white; /*set the color you want here*/
+  outline: none!important;
+  box-shadow: none !important;
+}

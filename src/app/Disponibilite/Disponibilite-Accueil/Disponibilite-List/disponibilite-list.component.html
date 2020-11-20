@@ -19,12 +19,12 @@
 
       <tbody>
       <tr *ngFor="let d of dispo" >
-        <ng-container *ngIf="d.employee">
+        <ng-container *ngIf="d.employeeFromDisp">
       <th scope ="row">Disponibilité de :</th>
 
 
-        <td >{{d.employee?.nom}}</td>
-        <td> {{d.employee?.prenom}}</td>
+        <td >{{d.employeeFromDisp?.nom}}</td>
+        <td> {{d.employeeFromDisp?.prenom}}</td>
         <td><button class="btn btn-warning" [routerLink]="['/dispoThisEmp/'+d.idDispo] ">Clique pour voir la disponibilité</button></td>
 
 </ng-container>

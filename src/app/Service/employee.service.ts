@@ -42,4 +42,44 @@ export class EmployeeService {
   allViewDone(){
     return this.http.get(`${API_URL}allVisioDone`);
   }
+  getTestMethod2(idEmp: any){
+    const params = new HttpParams()
+    .set('idEmp', idEmp);
+    return this.http.get(`${API_URL}testMethod2`,{params});
+  }
+  beAChief(idEmp: any){
+    const params = new HttpParams()
+    .set('idEmp', idEmp);
+    return this.http.get(`${API_URL}beAChief`,{params});
+  }
+  beAMana(idEmp: any){
+    const params = new HttpParams()
+    .set('idEmp', idEmp);
+    return this.http.get(`${API_URL}beAManager`,{params});
+  }
+  beAWorker(idEmp: any){
+    const params = new HttpParams()
+    .set('idEmp', idEmp);
+    return this.http.get(`${API_URL}beAWorker`,{params});
+  }
+  beAStudent(idEmp: any){
+    const params = new HttpParams()
+    .set('idEmp', idEmp);
+    return this.http.get(`${API_URL}beAStudent`,{params});
+  }
+  changeNbrHeure(employe){
+    return this.http.put(`${API_URL}changeNbrHeure`, employe);
+  }
+  allConge(){
+    return this.http.get(`${API_URL}allConge`);
+  }
+  acceptConge(con){
+    return this.http.put(`${API_URL}acceptConge`, con);
+  }
+  unacceptConge(con){
+    return this.http.put(`${API_URL}unacceptConge`, con);
+  }
+  getOneConge(id:any){
+    return this.http.get(`${API_URL}oneConge/${id}`);
+  }
 }

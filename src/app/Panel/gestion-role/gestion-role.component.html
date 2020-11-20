@@ -1,0 +1,11 @@
+<h1>Gestion des roles</h1>
+
+<h5 id="nom">{{userR.nom|uppercase}}</h5>
+<h5 id="prenom">{{userR.prenom|uppercase}}</h5>
+<h5 id="roleActuel">Role :&nbsp;{{userR.nomRole}}</h5>
+<button id="first" class="btn btn-success" (click)="inChief()">Patron</button>
+<button id="two" class="btn btn-success" (click)="inManager()">Manager</button>
+<button id="four" class="btn btn-success" (click)="inStudent()">Etudiant</button>
+<button id="three" class="btn btn-success" (click)="inWorker()">Ouvrier</button>
+
+

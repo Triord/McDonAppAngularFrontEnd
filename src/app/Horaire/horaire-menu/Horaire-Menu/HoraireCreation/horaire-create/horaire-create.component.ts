@@ -53,8 +53,8 @@ dayDate = new Date() ;
       this.dispo = data;
       // tslint:disable-next-line: only-arrow-functions
       this.dispo.sort(function(a, b) {
-        if (a.employee?.nom < b.employee?.nom ) { return -1; }
-        if (a.employee?.nom > b.employee?.nom) { return 1; }
+        if (a.employeeFromDisp?.nom < b.employeeFromDisp?.nom ) { return -1; }
+        if (a.employeeFromDisp?.nom > b.employeeFromDisp?.nom) { return 1; }
         return 0;
     });
       console.log('LES DISPONIBILITE SONT ', data);
@@ -247,7 +247,7 @@ dayDate = new Date() ;
            // console.log('le temps additionné est de ',timeAdd,h.idHoraire);
             // console.log('date avec le resultat en heure= ',hourInNumber,h.nbrHeureDay)
            // affichage des horaire mappé par spring console.log('horaire hash is',h);
-            this.employe.find(employe => employe?.idEmploye === h.employee?.idEmploye).horaire.push(h);
+            this.employe.find(employe => employe?.idEmploye === h.employeeFromHoraire?.idEmploye).horaire.push(h);
 
             h.dateJour = moment(h.dateJour).format('YYYY-MM-DD') as unknown as Date;
             this.lundi = moment(this.lundi).format('YYYY-MM-DD') as unknown as Date;
@@ -263,27 +263,27 @@ dayDate = new Date() ;
 
 
             if (h.dateJour === this.lundi) {
-              this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.lundi = h;
+              this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).semaine.lundi = h;
 
           }
             if (h.dateJour === this.mardi) {
-              this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.mardi = h;
+              this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).semaine.mardi = h;
           }
             if (h.dateJour === this.mercredi) {
 
-              this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.mercredi = h;
+              this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).semaine.mercredi = h;
           }
             if (h.dateJour === this.jeudi) {
-            this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.jeudi = h;
+            this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).semaine.jeudi = h;
           }
             if (h.dateJour === this.vendredi) {
-            this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.vendredi = h;
+            this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).semaine.vendredi = h;
           }
             if (h.dateJour === this.samedi) {
-            this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.samedi = h;
+            this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).semaine.samedi = h;
           }
             if (h.dateJour === this.dimanche) {
-            this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.dimanche = h;
+            this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).semaine.dimanche = h;
           }
 
 
@@ -347,26 +347,26 @@ dayDate = new Date() ;
 
 
             if (h.dateJour === this.lundi) {
-         this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.lundi = h;
-         console.log(this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.lundi);
+         this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).semaine.lundi = h;
+         console.log(this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).semaine.lundi);
        }
             if (h.dateJour === this.mardi) {
-         this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.mardi = h;
+         this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).semaine.mardi = h;
        }
             if (h.dateJour === this.mercredi) {
-         this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.mercredi = h;
+         this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).semaine.mercredi = h;
        }
             if (h.dateJour === this.jeudi) {
-         this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.jeudi = h;
+         this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).semaine.jeudi = h;
        }
             if (h.dateJour === this.vendredi) {
-         this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.vendredi = h;
+         this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).semaine.vendredi = h;
        }
             if (h.dateJour === this.samedi) {
-         this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.samedi = h;
+         this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).semaine.samedi = h;
        }
             if (h.dateJour === this.dimanche) {
-         this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.dimanche = h;
+         this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).semaine.dimanche = h;
        }
 
 
@@ -409,7 +409,7 @@ reloadComponent() {
   console.log('this idemp =', this.idEmp);
   this.empS.getEmpSelect(this.idEmp).subscribe((data: Employe) => {
    //  console.log(data);
-    this.hor.employee = data;
+    this.hor.employeeFromHoraire = data;
     if (this.hor.dateJour < this.lundi) {
       console.log('erreur impossible de creer un horaire pour le passé');
     }
@@ -489,16 +489,16 @@ reloadComponent() {
         horr.heureFin = this.hor.heureFin;
         horr.heureDebut2 = this.hor.heureDebut2;
         horr.heureFin2 = this.hor.heureFin2;
-        horr.employee = {
-          idEmploye : this.hor.employee.idEmploye,
-          nom: this.hor.employee.nom,
-          prenom: this.hor.employee.prenom,
-          email: this.hor.employee.email,
-          ddn: this.hor.employee.ddn,
-          mdp: this.hor.employee.mdp,
-          nbrHeure: this.hor.employee.nbrHeure,
-          statut: this.hor.employee.statut,
-          dispo: this.hor.employee.dispo,
+        horr.employeeFromHoraire = {
+          idEmploye : this.hor.employeeFromHoraire.idEmploye,
+          nom: this.hor.employeeFromHoraire.nom,
+          prenom: this.hor.employeeFromHoraire.prenom,
+          email: this.hor.employeeFromHoraire.email,
+          ddn: this.hor.employeeFromHoraire.ddn,
+          mdp: this.hor.employeeFromHoraire.mdp,
+          nbrHeure: this.hor.employeeFromHoraire.nbrHeure,
+          statut: this.hor.employeeFromHoraire.statut,
+          dispo: this.hor.employeeFromHoraire.dispo,
           horaire: null,
           semaine: null
         };

@@ -7,7 +7,7 @@
   <div class="form-group" style="width: 300px;">
     <label for="ddn" ><h6> Comme horaire en date du :</h6></label>
     <input [(ngModel)]="hor.dateJour" type="date" placeholder="yyyy-MM-dd" name="ddn" class="form-control" id="date" style="border-color: rgb(117, 79, 148); border-radius: 10px; font-size: small;">
-    <p *ngIf="!isFree" >L'utilisateur {{hor.employee.nom}} n'est pas disponible ce jour la veuillez chosir quelqu'un d'autre</p>
+    <p *ngIf="!isFree" >L'utilisateur {{hor.employeeFromHoraire.nom}} n'est pas disponible ce jour la veuillez chosir quelqu'un d'autre</p>
     <p *ngIf="hor.dateJour < lundi" > veullez selectionner une date superieur a la date du debut de semaine</p>
   </div>
 
@@ -31,7 +31,7 @@
   <label >A:&nbsp;&nbsp;</label>
   <input [(ngModel)]="hor.heureFin" type="time" id="hf" name="appt"  step="1" required   >
 </div>
-<p *ngIf="!verifDisp" >l'utilisateur {{hor.employee.prenom}} {{hor.employee.nom}} n est pas disponible dans les heure selctionne  </p>
+<p *ngIf="!verifDisp" >l'utilisateur {{hor.employeeFromHoraire.prenom}} {{hor.employeeFromHoraire.nom}} n est pas disponible dans les heure selctionne  </p>
 
 <div class="form-group" style="width: 300px;">
   <h6>[Deuxième horaire]</h6>

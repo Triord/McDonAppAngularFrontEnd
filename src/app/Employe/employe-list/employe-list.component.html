@@ -8,6 +8,7 @@
         <th scope="col">PRENOM</th>
         <th scope="col">STATUT</th>
         <th scope="col">&nbsp;</th>
+
       </tr>
     </thead>
 
@@ -18,7 +19,12 @@
         <td>{{employe.prenom}}</td>
         <td *ngIf="employe.statut" style="color: green;">ACTIVE</td>
         <td *ngIf="!employe.statut" style="color: red;">INACTIVE</td>
-        <td><button class="btn btn-primary" [routerLink]="['/employe/list/thisEmp/'+employe.idEmploye]">More</button></td>
+        <td>
+          <button id="test" class="btn btn-primary"  [routerLink]="['/employe/list/thisEmp/'+employe.idEmploye]">More</button>
+          <button class="btn btn-primary" [routerLink]="['/admin/panelList/gestionRole/'+employe.idEmploye]">Role</button>
+          <button id="test2" class="btn btn-primary" [routerLink]="['/employe/list/contrat/'+employe.idEmploye]">Heure/S</button>
+        </td>
+
       </tr>
     </tbody>
 </table>

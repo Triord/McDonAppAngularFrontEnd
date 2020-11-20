@@ -1,0 +1,39 @@
+h1{
+  text-align: center;
+  margin: 25px;
+  color: rgb(41, 184, 184);
+  font-family: FreeMono, monospace;
+  }
+  .table-hover ,th,td {
+    border: none;
+
+  }
+  thead {
+  border: none;
+  }
+#accept{
+  background-color: chartreuse;
+  opacity: 0.5;
+  height: 30px;
+  width: 30px;
+  padding: 0px;
+  border-color: rgb(240, 240, 240);
+  box-shadow: none!important;
+}
+#unaccept{
+  background-color: rgb(255, 38, 0);
+  opacity: 0.5;
+  height: 30px;
+  width: 30px;
+  padding: 0px;
+  border-color: rgb(240, 240, 240);
+  box-shadow: none!important;
+}
+#siAccepter{
+  color: chartreuse;
+  opacity: 0,5;
+}
+#siNonAccepter{
+  color: red;
+  opacity: 0,5;
+}

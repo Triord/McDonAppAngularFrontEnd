@@ -1,0 +1,26 @@
+<h1>Liste des demande de congé</h1>
+<table class="table table-hover"  >
+  <thead>
+    <tr>
+      <th>Employe</th>
+      <th>Date</th>
+      <th>Raison</th>
+      <th>Status</th>
+      <th></th>
+      <th></th>
+
+    </tr>
+  </thead>
+  <tbody >
+    <tr *ngFor="let conge of conges">
+      <td *ngIf="conge.raison" >{{conge?.employeeFromConge?.nom}}&nbsp;{{conge?.employeeFromConge?.prenom}}</td>
+      <td *ngIf="conge.raison">{{conge?.dateConge | date : 'EEEE dd/MM/yyyy'}}</td>
+      <td *ngIf="conge.raison">{{conge?.raison}}</td>
+      <td *ngIf="conge.statusConge === null && conge.raison" >En cours de validation</td>
+      <td *ngIf="conge.statusConge === null && conge.raison"><button id="accept" class="btn btn-primary" (click)="onClikAccept($event, conge)">V</button></td>
+      <td *ngIf="conge.statusConge === null && conge.raison"><button id="unaccept" class="btn btn-primary" (click)="onClikUnaccept($event, conge)">X</button></td>
+      <td id="siAccepter" *ngIf="conge.statusConge && conge.raison">Congé accepté</td>
+      <td id="siNonAccepter" *ngIf="!conge.statusConge && conge.raison">Congé non-accepté</td>
+    </tr>
+  </tbody>
+</table>

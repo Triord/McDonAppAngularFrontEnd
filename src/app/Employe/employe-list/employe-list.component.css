@@ -13,6 +13,34 @@ background-color: white!important;
 outline: none!important;
 box-shadow: none !important;
 }
+#test:hover, #test:focus, #test:active, #test.active, .open>.dropdown-toggle#test {
+  color: #fff;
+  background-color: #b2b2b263!important;
+  border-color: white; /*set the color you want here*/
+  outline: none!important;
+  box-shadow: none !important;
+}
+#test{
+color:  #B2B2B2;
+border-color:  #b2b2b2cb;
+background-color: white!important;
+outline: none!important;
+box-shadow: none !important;
+}
+#test2:hover, #test2:focus, #test2:active, #test2.active, .open>.dropdown-toggle#test2 {
+  color: #fff;
+  background-color: #4b2febd0!important;
+  border-color: white; /*set the color you want here*/
+  outline: none!important;
+  box-shadow: none !important;
+}
+#test2{
+color:  #4b2febd0;
+border-color:  #4b2febd0;
+background-color: white!important;
+outline: none!important;
+box-shadow: none !important;
+}
 h1{
 text-align: center;
 margin: 25px;

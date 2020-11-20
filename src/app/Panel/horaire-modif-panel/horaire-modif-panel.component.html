@@ -11,10 +11,10 @@
     </tr>
   </thead>
 
-  <tbody >
-    <tr *ngFor="let raisonModif of rm" >
-      <td *ngIf="raisonModif.raison" style="color: rgb(117, 79, 148);">{{raisonModif.horaire?.employee?.nom|uppercase}} {{raisonModif.horaire?.employee?.prenom|uppercase}}</td>
-      <td *ngIf="raisonModif.raison">{{raisonModif.employe?.nom|uppercase}}{{raisonModif.employe?.prenom|uppercase}}</td>
+  <tbody *ngIf="rm2.length>1" >
+    <tr *ngFor="let raisonModif of rm2" >
+      <td *ngIf="raisonModif.raison" style="color: rgb(117, 79, 148);">{{raisonModif?.horaire?.employeeFromHoraire?.nom|uppercase}} {{raisonModif?.horaire?.employeeFromHoraire?.prenom|uppercase}}</td>
+      <td *ngIf="raisonModif.raison">{{raisonModif.employeFromRM?.nom|uppercase}}{{raisonModif.employeFromRM?.prenom|uppercase}}</td>
       <td *ngIf="raisonModif.raison" >{{raisonModif.horaire?.dateJour|date:'EEEE dd/MM/yyyy'}}</td>
       <td *ngIf="raisonModif.raison">{{raisonModif.dateModif|date:'EEEE dd/MM/yyyy'}}</td>
       <td *ngIf="raisonModif.raison">{{raisonModif.raison}}</td>

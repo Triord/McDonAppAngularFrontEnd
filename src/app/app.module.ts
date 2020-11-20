@@ -1,3 +1,4 @@
+import { GestionContratComponent } from './Panel/gestion-contrat/gestion-contrat.component';
 import { HoraireModifPanelComponent } from './Panel/horaire-modif-panel/horaire-modif-panel.component';
 import { VisioEmpPanelComponent } from './Panel/visio-emp-panel/visio-emp-panel.component';
 
@@ -40,6 +41,8 @@ import { DisponibiliteEmployeComponent } from './Disponibilite/Disponibilite-Acc
 import { EmployeListComponent } from './Employe/employe-list/employe-list.component';
 import { EmployeInfoComponent } from './Employe/employe-info/employe-info.component';
 import { PanelListComponent } from './Panel/panel-list/panel-list.component';
+import { GestionRoleComponent } from './Panel/gestion-role/gestion-role.component';
+import { ListDemandeComponent } from './Conge/list-demande/list-demande.component';
 registerLocaleData(localeFr);
 
 
@@ -59,9 +62,12 @@ const routes: Routes = [
   { path: 'dispoThisEmp/:id', component: DisponibiliteEmployeComponent},
   { path: 'employe/list', component: EmployeListComponent},
   { path: 'employe/list/thisEmp/:id', component: EmployeInfoComponent},
+  { path: 'employe/list/contrat/:id', component: GestionContratComponent},
   { path: 'admin/panelList', component: PanelListComponent},
   { path: 'admin/panelList/raisonVisioEmpl', component: VisioEmpPanelComponent},
   { path: 'admin/panelList/raisonModifHoraire', component: HoraireModifPanelComponent},
+  { path: 'admin/panelList/gestionRole/:id', component: GestionRoleComponent},
+  { path: 'conge/listConge' , component: ListDemandeComponent},
   { path: '', component: HomeComponent },
 ];
 
@@ -84,6 +90,8 @@ const routes: Routes = [
     PanelListComponent,
     VisioEmpPanelComponent,
     HoraireModifPanelComponent,
+    GestionRoleComponent,
+    ListDemandeComponent,
   ],
   imports: [
     BrowserModule,

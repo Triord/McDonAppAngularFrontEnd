@@ -107,7 +107,7 @@ export class HoraireVisioComponent implements OnInit {
           this.horS.getScheduleById(h).subscribe((data: any)=>{
             h = data;
             console.log('horaire hash is',h);
-            this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).horaire.push(h);
+            this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).horaire.push(h);
 
             h.dateJour = moment(h.dateJour).format('YYYY-MM-DD') as unknown as Date;
             this.lundi = moment(this.lundi).format('YYYY-MM-DD') as unknown as Date;
@@ -120,27 +120,27 @@ export class HoraireVisioComponent implements OnInit {
 
 
             if(h.dateJour === this.lundi){
-            this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.lundi = h;
+            this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).semaine.lundi = h;
           }
             if(h.dateJour === this.mardi){
-            this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.mardi = h;
+            this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).semaine.mardi = h;
           }
             if(h.dateJour === this.mercredi){
-            this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.mercredi = h;
+            this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).semaine.mercredi = h;
           }
             if(h.dateJour === this.jeudi){
-            this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.jeudi = h;
+            this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).semaine.jeudi = h;
           }
             if(h.dateJour === this.vendredi){
-            this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.vendredi = h;
+            this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).semaine.vendredi = h;
           }
             if(h.dateJour === this.samedi){
-            this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.samedi = h;
+            this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).semaine.samedi = h;
           }
             if(h.dateJour === this.dimanche){
-            this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.dimanche = h;
+            this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).semaine.dimanche = h;
           }
-            console.log(this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine)
+            console.log(this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).semaine)
         });
 
 
@@ -159,25 +159,25 @@ export class HoraireVisioComponent implements OnInit {
 
 
             if(h.dateJour === this.lundi){
-        this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.lundi = h;
+        this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).semaine.lundi = h;
       }
             if(h.dateJour === this.mardi){
-        this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.mardi = h;
+        this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).semaine.mardi = h;
       }
             if(h.dateJour === this.mercredi){
-        this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.mercredi = h;
+        this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).semaine.mercredi = h;
       }
             if(h.dateJour === this.jeudi){
-        this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.jeudi = h;
+        this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).semaine.jeudi = h;
       }
             if(h.dateJour === this.vendredi){
-        this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.vendredi = h;
+        this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).semaine.vendredi = h;
       }
             if(h.dateJour === this.samedi){
-        this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.samedi = h;
+        this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).semaine.samedi = h;
       }
             if(h.dateJour === this.dimanche){
-        this.employe.find(employe => employe.idEmploye === h.employee.idEmploye).semaine.dimanche = h;
+        this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).semaine.dimanche = h;
       }
 
     }

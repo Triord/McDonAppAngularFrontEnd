@@ -26,6 +26,6 @@ dimanche: Time;
 dimanche2: Time;
 
 
-employee: Employe;
+employeeFromDisp: Employe;
 
 }

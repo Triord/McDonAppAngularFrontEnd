@@ -1,3 +1,4 @@
+import { DisponiniliteService } from './../../../../../Service/disponinilite.service';
 import { RaisonModif } from './../../../../../Interface/raisonModif';
 import { HoraireService } from 'src/app/Service/horaire.service';
 import { Employe } from 'src/app/Interface/employe';
@@ -5,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
 import { Horaire } from 'src/app/Interface/horaire';
 import { EmployeeService } from 'src/app/Service/employee.service';
 import { parse } from 'path';
+import { Disponibilite } from 'src/app/Interface/disponinilite';
 
 @Component({
   selector: 'app-horaire-modif',
@@ -17,7 +19,9 @@ export class HoraireModifComponent implements OnInit {
   idEmp: number;
   dateSel: string;
   rm: RaisonModif = new RaisonModif();
-  constructor(private horS: HoraireService, private empS: EmployeeService) { }
+  disp: Disponibilite = new Disponibilite();
+  verifDisp: boolean = true;
+  constructor(private horS: HoraireService, private empS: EmployeeService, private dispS: DisponiniliteService) { }
 
   ngOnInit(){
      this.empS.getAllEmploye().subscribe((data: Employe[])=>{
@@ -63,30 +67,108 @@ modifScheduleCompo(){
 
   hor.heureDebut2 = this.horaire.heureDebut2;
   hor.heureFin2 = this.horaire.heureFin2;
-  hor.employee = {
-    idEmploye : this.horaire.employee.idEmploye,
-    nom: this.horaire.employee.nom,
-    prenom: this.horaire.employee.prenom,
-    email: this.horaire.employee.email,
-    ddn: this.horaire.employee.ddn,
-    mdp: this.horaire.employee.mdp,
-    nbrHeure: this.horaire.employee.nbrHeure,
-    statut: this.horaire.employee.statut,
-    dispo: this.horaire.employee.dispo,
+  hor.employeeFromHoraire = {
+    idEmploye : this.horaire.employeeFromHoraire.idEmploye,
+    nom: this.horaire.employeeFromHoraire.nom,
+    prenom: this.horaire.employeeFromHoraire.prenom,
+    email: this.horaire.employeeFromHoraire.email,
+    ddn: this.horaire.employeeFromHoraire.ddn,
+    mdp: this.horaire.employeeFromHoraire.mdp,
+    nbrHeure: this.horaire.employeeFromHoraire.nbrHeure,
+    statut: this.horaire.employeeFromHoraire.statut,
+    dispo: this.horaire.employeeFromHoraire.dispo,
     horaire: null,
     semaine: null
   };
-  console.log(hor);
-  this.horS.modifScheduleServ(hor).subscribe((data)=>{
+  // console.log(hor.employee.nom);
+  this.dispS.getDispInHor(hor.employeeFromHoraire.idEmploye).subscribe((data: any) => {
+    console.log(data);
+    this.disp = data;
+    const dateOfSchedule = new Date(hor.dateJour);
+    if (dateOfSchedule.toString().slice(0, 3) === 'Mon') {
+      console.log('date is lundi');
+      if (hor.heureDebut < this.disp?.lundi || hor.heureFin > this.disp?.lundi2 ||
+        hor.heureDebut2 < this.disp?.lundi || hor.heureFin2 > this.disp?.lundi2 ) {
+        this.verifDisp = false;
+    } else {
+      this.verifDisp = true;
+    }
+    }
+    if (dateOfSchedule.toString().slice(0, 3) === 'Tue') {
+      console.log('date is mardi');
+      if (hor.heureDebut < this.disp?.mardi || hor.heureFin > this.disp?.mardi2 ||
+        hor.heureDebut2 < this.disp?.mardi || hor.heureFin2 > this.disp?.mardi2 ) {
+        this.verifDisp = false;
+    } else {
+      this.verifDisp = true;
+    }
+    }
+    if (dateOfSchedule.toString().slice(0, 3) === 'Wed') {
+      console.log('date is mercredi');
+      if (hor.heureDebut < this.disp?.mercredi || hor.heureFin > this.disp?.mercredi2 ||
+        hor.heureDebut2 < this.disp?.mercredi || hor.heureFin2 > this.disp?.mercredi2 ) {
+        this.verifDisp = false;
+    } else {
+      this.verifDisp = true;
+    }
+    }
+    if (dateOfSchedule.toString().slice(0, 3) === 'Thu') {
+      console.log('date is jeudi');
+      if (hor.heureDebut < this.disp?.jeudi || hor.heureFin > this.disp?.jeudi2 ||
+        hor.heureDebut2 < this.disp?.jeudi || hor.heureFin2 > this.disp?.jeudi2 ) {
+        this.verifDisp = false;
+    } else {
+      this.verifDisp = true;
+    }
+    }
+    if (dateOfSchedule.toString().slice(0, 3) === 'Fri') {
+      console.log('date is vendredi');
+      if (hor.heureDebut < this.disp?.vendredi || hor.heureFin > this.disp?.vendredi2 ||
+        hor.heureDebut2 < this.disp?.vendredi || hor.heureFin2 > this.disp?.vendredi2 ) {
+        this.verifDisp = false;
+    } else {
+      this.verifDisp = true;
+    }
+    }
+    if (dateOfSchedule.toString().slice(0, 3) === 'Sat') {
+      console.log('date is lundi');
+      if (hor.heureDebut < this.disp?.samedi || hor.heureFin > this.disp?.samedi2 ||
+        hor.heureDebut2 < this.disp?.samedi || hor.heureFin2 > this.disp?.samedi2 ) {
+        this.verifDisp = false;
+    } else {
+      this.verifDisp = true;
+    }
+    }
+    if (dateOfSchedule.toString().slice(0, 3) === 'Sun') {
+      console.log('date is lundi');
+      if (hor.heureDebut < this.disp?.dimanche || hor.heureFin > this.disp?.dimanche2 ||
+        hor.heureDebut2 < this.disp?.dimanche || hor.heureFin2 > this.disp?.dimanche2 ) {
+        this.verifDisp = false;
+    } else {
+      this.verifDisp = true;
+    }
+    }
+
+    if (this.verifDisp) {
+      this.horS.modifScheduleServ(hor).subscribe(( data ) => {
     alert('Modification effectué cliqué pour continuer');
     location.reload();
   });
+    }
+  });
 }
   saveRaisonModif(){
-    this.rm.horaire = this.horaire;
-    this.horS.saveModif(this.rm).subscribe((data: any)=>{
+    console.log(this.verifDisp)
+    if (!this.verifDisp) {
+      console.log('testkfdnibiviibqervbubeu')
+      this.rm.horaire = this.horaire;
+      this.horS.saveModif(this.rm).subscribe((data: any)=>{
       console.log('null')
     });
+    }
+    else{
+      console.log('bsrbtbviuzritvi')
+    }
   }
   removeThisSchedule(){
     this.horaire.statusHoraire = false;

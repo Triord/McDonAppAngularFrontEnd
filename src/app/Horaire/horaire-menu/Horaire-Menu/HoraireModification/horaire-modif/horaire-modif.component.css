@@ -124,5 +124,8 @@ input[type=time]::-webkit-clear-button {
 input[type=time]::-webkit-inner-spin-button {
   display: flex;
 }
-
-
+p{
+  color: red;
+color-adjust: red;
+font-size: small;
+}

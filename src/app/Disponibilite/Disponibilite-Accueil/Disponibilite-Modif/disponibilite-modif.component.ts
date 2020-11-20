@@ -29,12 +29,12 @@ export class DisponibiliteModifComponent implements OnInit {
         }
       })
       this.dispo.sort(function(a, b){
-        if(a.employee?.nom < b.employee?.nom ) { return -1; }
-        if(a.employee?.nom > b.employee?.nom) { return 1; }
+        if(a.employeeFromDisp?.nom < b.employeeFromDisp?.nom ) { return -1; }
+        if(a.employeeFromDisp?.nom > b.employeeFromDisp?.nom) { return 1; }
         return 0;
     })
       console.log("dispo",this.dispo);
-      console.log("emp",this.dispo[0]?.employee)
+      console.log("emp",this.dispo[0]?.employeeFromDisp)
 
     }
   )};

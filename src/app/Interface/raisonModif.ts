@@ -6,5 +6,5 @@ export class RaisonModif{
   raison: string;
   dateModif: Date = new Date();
   horaire: Horaire;
-  employe: Employe;
+  employeFromRM: Employe;
 }

@@ -25,7 +25,7 @@ ngOnInit() {
     console.log(disp);
     this.disp = disp;
     console.log('test', this.disp);
-    if (this.disp.employee.statut === true) {
+    if (this.disp.employeeFromDisp.statut === true) {
      this.stat = 'travailleur toujours actif'
     } else {
       this.stat = 'ancien employe';

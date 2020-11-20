@@ -22,7 +22,7 @@ export class DisponibiliteEmployeComponent implements OnInit {
     this.disp = dispo;
     this.disp as Disponibilite;
     console.log('test', this.disp);
-    if (this.disp.employee.statut === true) {
+    if (this.disp.employeeFromDisp.statut === true) {
      this.stat = 'travailleur toujours actif'
     } else {
       this.stat = 'ancien employe';
