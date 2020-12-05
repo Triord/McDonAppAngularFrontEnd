@@ -47,10 +47,13 @@ export class HoraireVisioComponent implements OnInit {
 
     const inputElement: HTMLInputElement = document.getElementById('dateSel1') as HTMLInputElement;
     const inputValue: string = inputElement.value;
-    const inputElement2: HTMLInputElement = document.getElementById('dateSel2') as HTMLInputElement;
-    const inputValue2: string = inputElement2.value;
+    // const inputElement2: HTMLInputElement = document.getElementById('dateSel2') as HTMLInputElement;
+    // const inputValue2: string = inputElement2.value;
     this.dateIn = inputValue;
-    this.dateOut =inputValue2;
+    // this.dateOut =inputValue2;
+    let dateOut2 = new Date(this.dateIn);
+    dateOut2.setDate(dateOut2.getDate()+7)
+    console.log('la date de sortie est:', dateOut2)
     // Lundi
     const dateLundi = new Date(this.dateIn);
     dateLundi.setDate(dateLundi.getDate() + 0);
@@ -85,6 +88,7 @@ export class HoraireVisioComponent implements OnInit {
     let dateRecherche = new Date(this.dateIn);
     dateRecherche.setDate(dateRecherche.getDate() - 1);
     dateRecherche = moment(dateRecherche).format('YYYY-MM-DD') as unknown as Date;
+    dateOut2 = moment(dateOut2).format('YYYY-MM-DD') as unknown as Date;
     this.empS.getAllEmploye().subscribe((response: Employe[])=>{
       this.employe = response;
       console.log(this.employe);
@@ -97,7 +101,8 @@ export class HoraireVisioComponent implements OnInit {
         employe.semaine = new Semaine();
 
       });
-      this.horS.getHoraire(dateRecherche as unknown as string, this.dateOut as unknown as string).subscribe((data: any) =>{
+      console.log(dateRecherche,dateOut2)
+      this.horS.getHoraire(dateRecherche as unknown as string, dateOut2 as unknown as string).subscribe((data: any) =>{
       this.horaire = data;
       console.log('tous les horaire', this.horaire)
 

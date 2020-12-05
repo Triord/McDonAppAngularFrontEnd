@@ -20,7 +20,7 @@
       <td *ngIf="conge.statusConge === null && conge.raison"><button id="accept" class="btn btn-primary" (click)="onClikAccept($event, conge)">V</button></td>
       <td *ngIf="conge.statusConge === null && conge.raison"><button id="unaccept" class="btn btn-primary" (click)="onClikUnaccept($event, conge)">X</button></td>
       <td id="siAccepter" *ngIf="conge.statusConge && conge.raison">Congé accepté</td>
-      <td id="siNonAccepter" *ngIf="!conge.statusConge && conge.raison">Congé non-accepté</td>
+      <td id="siNonAccepter" *ngIf="conge.statusConge === false && conge.raison">Congé non-accepté</td>
     </tr>
   </tbody>
 </table>

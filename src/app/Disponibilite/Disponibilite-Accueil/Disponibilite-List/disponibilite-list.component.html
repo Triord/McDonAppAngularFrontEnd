@@ -8,9 +8,16 @@
     <table class="table table-borderless"  >
       <thead >
       <tr >
-        <th scope ="col" style="border: none;"></th>
-        <th scope="col" style="border: none;">Nom : </th>
-        <th scope="col" style="border: none;">Prénom : </th>
+        <th scope="col" style="border: none;">Nom et Prénom </th>
+        <th scope="col">Lundi</th>
+        <th scope="col">Mardi</th>
+        <th scope="col">Mercredi</th>
+        <th scope="col">Jeudi</th>
+        <th scope="col">Vendredi</th>
+        <th scope="col">Samedi</th>
+        <th scope="col">Dimanche</th>
+        <td>&nbsp;</td>
+        <!--<td>&nbsp;</td>-->
 
       </tr>
       </thead>
@@ -20,12 +27,27 @@
       <tbody>
       <tr *ngFor="let d of dispo" >
         <ng-container *ngIf="d.employeeFromDisp">
-      <th scope ="row">Disponibilité de :</th>
+      <td >{{d.employeeFromDisp?.nom}}<br> {{d.employeeFromDisp?.prenom}}</td>
+      <td *ngIf="d.lundi; else elsel">De : {{d?.lundi |slice:0:5}} A: {{d?.lundi2|slice:0:5}}</td>
+      <td *ngIf="d.mardi; else elsema">De : {{d?.mardi |slice:0:5}} A: {{d?.mardi2|slice:0:5}}</td>
+      <td *ngIf="d.mercredi; else elseme">De : {{d?.mercredi |slice:0:5}} A: {{d?.mercredi2|slice:0:5}}</td>
+      <td *ngIf="d.jeudi; else elsej">De : {{d?.jeudi |slice:0:5}} A: {{d?.jeudi2|slice:0:5}}</td>
+      <td *ngIf="d.vendredi; else elsev">De : {{d?.vendredi |slice:0:5}} A: {{d?.vendredi2|slice:0:5}}</td>
+      <td *ngIf="d.samedi; else elses">De : {{d?.samedi |slice:0:5}} A: {{d?.samedi2|slice:0:5}}</td>
+      <td *ngIf="d.dimanche; else elsed">De : {{d?.dimanche |slice:0:5}} A: {{d?.dimanche2|slice:0:5}}</td>
+      <td><mat-icon [routerLink]="['/dispoThisEmp/'+d.idDispo] " style="color: orange; border-style: none; outline-style: none;">border_color</mat-icon></td>
+      <!--<td><mat-icon style="color: red;">delete_outline</mat-icon></td>-->
 
 
-        <td >{{d.employeeFromDisp?.nom}}</td>
-        <td> {{d.employeeFromDisp?.prenom}}</td>
-        <td><button class="btn btn-warning" [routerLink]="['/dispoThisEmp/'+d.idDispo] ">Clique pour voir la disponibilité</button></td>
+
+      <ng-template #elsel> <td>///////////////////////////</td></ng-template>
+      <ng-template #elsema><td>///////////////////////////</td> </ng-template>
+      <ng-template #elseme><td>///////////////////////////</td></ng-template>
+      <ng-template #elsej><td>///////////////////////////</td></ng-template>
+      <ng-template #elsev><td>///////////////////////////</td></ng-template>
+      <ng-template #elses><td>///////////////////////////</td></ng-template>
+      <ng-template #elsed><td>///////////////////////////</td></ng-template>
+
 
 </ng-container>
 
@@ -40,3 +62,9 @@
 
     </td>
 
+<!--
+               ---------------POUR LES DISPO----------------------
+
+              <td><mat-icon style="color: orange;">border_color</mat-icon></td>
+            <td><mat-icon style="color: red;">delete_outline</mat-icon></td>
+           -->

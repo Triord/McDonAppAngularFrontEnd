@@ -15,6 +15,7 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit {
   title = 'McDonApp';
 l: boolean = false;
+username: string;
 active='top';
   constructor(private auth: AuthenticationService, private logou: LoginComponent , private router: Router){}
 
@@ -22,8 +23,8 @@ active='top';
 
   ngOnInit() {
    console.log("le log"+this.authenticated);
-
-
+   this.username =  this.auth.getAuthenticatedUser();
+   console.log(this.username)
   }
   logout(){
     this.logou.logout();
@@ -36,5 +37,6 @@ active='top';
 
 
   }
+
 }
 

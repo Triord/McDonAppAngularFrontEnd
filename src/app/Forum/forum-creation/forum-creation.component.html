@@ -1,0 +1,17 @@
+<h1>Création de nouvelle pour le forum </h1>
+<div class="container">
+  <div class="div">
+<form class="form-group" >
+  <label>Titre :</label>
+  <input [(ngModel)]="forum.titre" class="form-control" id="titre" name="titre" type="text" placeholder="entrez votre titre ici ">
+</form>
+</div>
+
+<form class="form-group" id="div2" >
+  <label>Contenu :</label>
+  <input [(ngModel)]="forum.contenu" class="form-control" id="contenu" name="contenu" type="text" placeholder="entrez le contenu de votre nouvelle ici ">
+</form>
+<div class="test">
+<button class="btn btn-primary" (click)="addForumNews()">Valider</button></div>
+</div>
+

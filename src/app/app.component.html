@@ -1,22 +1,37 @@
 
-<ul ngbNav class="nav-tabs justify-content-center" style="padding-bottom: 20px; border-style: none;" >
-  <button type="button" class="btn btn-outline-info" style="outline-color: teal;"  [routerLink]="'/employe/list'">Employée
+<ul id="navbarStyle" ngbNav class="nav-tabs justify-content-center" style="padding-bottom: 20px; border-style: none;" >
+
+
+  <button type="button" id="posBttn" class="btn btn-outline-info"   [routerLink]="'/employe/list'">Employée
   </button>
-  <button type="button" class="btn btn-outline-info"[routerLink]="'/conge/listConge'" style="outline-color: teal;" >Congé
+  <button type="button" id="posBttn" class="btn btn-outline-info"[routerLink]="'/conge/listConge'"  >Congé
     <ng-template ngbNavContent>
       <p></p>
     </ng-template>
   </button>
-  <button type="button" class="btn btn-outline-info" [routerLink]="'/dispoMenu'" style="outline-color: teal;" >Disponibilité
+  <button type="button" id="posBttn" class="btn btn-outline-info" [routerLink]="'/dispoMenu'"  >Disponibilité
     <ng-template ngbNavContent>
       <p></p>
     </ng-template>
   </button>
-  <button  type="button" class="btn btn-outline-info" [routerLink]="'/horaireMenu'" style="outline-color: teal;" >Horaire
+<!--
+  <button type="button" id="posBttn" class="btn btn-outline-info" [routerLink]="'/horaireVue'"  >Horaire
     <ng-template ngbNavContent>
       <p></p>
     </ng-template>
   </button>
+-->
+
+  <div class="btn-group mr-3">
+    <button type="button" id="posBttn" class="btn btn-outline-info" [routerLink]="'/horaireVue'" >Horaire</button>
+    <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+      <button id="posBttn" class="btn btn-primary dropdown-toggle-split" ngbDropdownToggle></button>
+      <div class="dropdown-menu" ngbDropdownMenu style="border-style: none; height: 50px;">
+        <button id="posBttn" ngbDropdownItem routerLink="/horaireCreation">Créer</button>
+        <button id="posBttn" ngbDropdownItem routerLink="/horaireModification">Modifier/Supprimer</button>
+      </div>
+    </div>
+  </div>
 <!--
  <button type="button" class="btn btn-outline-info " style="outline-color: teal;" >Inscription en attente
   <ng-template ngbNavContent>
@@ -24,27 +39,28 @@
   </ng-template>
 </button>
 -->
-<button type="button" class="btn btn-outline-info" style="outline-color: teal;">Question
+<button type="button" id="posBttn" class="btn btn-outline-info" >Question
   <ng-template ngbNavContent>
     <p></p>
   </ng-template>
 </button>
-<button type="button" class="btn btn-outline-info" style="outline-color: teal;">Forum
+<button type="button" id="posBttn" class="btn btn-outline-info" [routerLink]="'/forum'" >Forum
   <ng-template ngbNavContent>
     <p></p>
   </ng-template>
 </button>
-<button type="button" class="btn btn-outline-info" style="outline-color: teal;">Appellez renforts
+<button type="button" id="posBttn" class="btn btn-outline-info">Appellez renforts
   <ng-template ngbNavContent>
     <p></p>
   </ng-template>
 </button>
 
-<button type="button" class="btn btn-outline-info" [routerLink]="'/admin/panelList'" style="outline-color: teal;">Panel StoreManager
+<button type="button" id="posBttn" class="btn btn-outline-info" [routerLink]="'/admin/panelList'">Panel StoreManager
   <ng-template ngbNavContent>
     <p></p>
   </ng-template>
 </button>
+
       <!--
                       <li ngbDropdown class="nav-item">
 
@@ -56,10 +72,14 @@
                         </div>
                       </li>-->
 
+
   <li  ngbNavItem  class="ml-auto">
-    <button  type="button" class="btn btn-outline-success" [routerLink]="'/login'"  *ngIf="!authenticated" >Authentification</button>
-    <button type="button" class="btn btn-outline-danger" *ngIf="authenticated" (click)="logout()">Se deconnecter</button>
+    <button  type="button"  class="btn btn-outline-success" [routerLink]="'/login'"  *ngIf="!authenticated" >Authentification</button>
+    <img src="assets\icons\logoMcDo.png" alt="Logo" style="width:70px; height: 70px;">
+    <button type="button"  class="btn btn-outline-danger" *ngIf="authenticated" (click)="logout()">Se deconnecter de {{username}}</button>
   </li>
+
+
 </ul>
 <!-- <h1 style="text-align: center; padding-bottom: 40px;" >Page d'accueil &nbsp;</h1>
 

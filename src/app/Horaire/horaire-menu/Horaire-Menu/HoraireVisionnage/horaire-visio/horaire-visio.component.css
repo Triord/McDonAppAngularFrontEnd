@@ -26,3 +26,37 @@ h1{
       box-shadow: none !important;
 
       }
+      #test:hover, #test:focus, #test:active, #test.active, .open>.dropdown-toggle#test {
+        color: #fff;
+        background-color: #e97203e8!important;
+        border-color: white; /*set the color you want here*/
+        outline: none!important;
+        box-shadow: none !important;
+      }
+      #test{
+      color:  #e97203e8;
+      border-color:  #e97203e8;
+      background-color: white!important;
+      outline: none!important;
+      box-shadow: none !important;
+      }
+      #test2:hover, #test2:focus, #test2:active, #test2.active, .open>.dropdown-toggle#test2 {
+        color: #fff;
+        background-color: #eb2f2fd0!important;
+        border-color: #eb2f2fd0; /*set the color you want here*/
+        outline: none!important;
+        box-shadow: none !important;
+      }
+      #test2{
+      color:  #eb2f2fd0;
+      border-color:  #eb2f2fd0;
+      background-color: white!important;
+      outline: none!important;
+      box-shadow: none !important;
+      }
+      td{
+        width: 10px;
+        height: 10px!important;
+        max-width: 10px;
+        max-height: 40px;
+      }

@@ -15,6 +15,7 @@
       <th scope="col" >Nom</th>
       <th scope="col">Prenom</th>
       <th scope="col">Email</th>
+      <th scope="col">Numéro de téléphone</th>
       <th scope="col">Date de naissance</th>
       <th scope="col">Nombre d'heure contrat</th>
 
@@ -24,19 +25,14 @@
   <tbody *ngIf="employe" >
     <td >{{employe.nom}}</td>
     <td>{{employe.prenom}}</td>
-    <td *ngIf="employe.statut">{{employe.email}}</td>
-    <td *ngIf="employe.statut" >{{employe.ddn|date : 'dd-MM-yyyy'}}</td>
-    <td *ngIf="employe.statut" >{{employe.nbrHeure}}</td>
+    <td >{{employe.email}}</td>
+    <td >{{employe.numTel}}</td>
+    <td >{{employe.ddn|date : 'dd-MM-yyyy'}}</td>
+    <td  >{{employe.nbrHeure}}</td>
 
+    <!--<td *ngIf="!employe.statut" >**********************</td>
     <td *ngIf="!employe.statut" >**********************</td>
-    <td *ngIf="!employe.statut" >**********************</td>
-    <td *ngIf="!employe.statut" >**********************</td>
-
-    <!--
-      CREER BOUTON DEMISSIONNER DANS MACDONAPPMOBILE
-      POSSIBILITE DE MODIFIER UN HORAIRE EN CHANGEANT L EMPLOYE QUI TRAVAILLE
-      RAJOUTER UNE COLONNE DANS LA TABLE RM(modifRaison) ET LA SUITE AUSSI QUOI
-    -->
+    <td *ngIf="!employe.statut" >**********************</td>-->
 
   </tbody>
 </table>

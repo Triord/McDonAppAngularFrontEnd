@@ -1,3 +1,57 @@
+#posBttn:hover, #posBttn:focus, #posBttn:active, #posBttn.active, .open>.dropdown-toggle#posBttn{
+  margin-top: 10px;
+  border-color: white; /*set the color you want here*/
+  outline: none!important;
+  box-shadow: none !important;
+  background-color:  rgb(41, 184, 184);
+  color: white;
+  height: 50px;
+  border-radius: 50px;
+}
+#posBttn{
+  height: 50px;
+  margin-top: 10px;
+  border-color: white!important; /*set the color you want here*/
+  outline: none!important;
+  box-shadow: none !important;
+  border-radius: 50px!important;
+  color:  rgb(41, 184, 184);
+  background-color: white;
+}
+.btn-outline-success:hover, .btn-outline-success:focus, .btn-outline-success:active, .btn-outline-success.active, .open>.dropdown-toggle.btn-outline-success {
+  color: #fff;
+  background-color: rgb(29, 172, 29)!important;
+  border-color: white; /*set the color you want here*/
+  outline: none!important;
+  box-shadow: none !important;
+  margin-top: 10px;
+}
+.btn-outline-success{
+margin-top: 10px;
+color:  green;
+border-color:  green;
+background-color: white!important;
+outline: none!important;
+box-shadow: none !important;
+}
+.btn-outline-danger:hover, .btn-outline-danger:focus, .btn-outline-danger:active, .btn-outline-danger.active, .open>.dropdown-toggle.btn-outline-danger {
+  color: #fff;
+  background-color: red!important;
+  border-color: white; /*set the color you want here*/
+  outline: none!important;
+  box-shadow: none !important;
+  margin-top: 10px;
+}
+.btn-outline-danger{
+  margin-top: 10px;
+color:  red;
+border-color:  red;
+background-color: white!important;
+outline: none!important;
+box-shadow: none !important;
+
+
+}
 
 .purple-color{
   color: purple;

@@ -26,6 +26,14 @@ export class HoraireModifComponent implements OnInit {
   ngOnInit(){
      this.empS.getAllEmploye().subscribe((data: Employe[])=>{
      this.employes = data;
+     this.employes.forEach(em => {
+        if (typeof em ==='number') {
+          this.empS.getOneEmp(em).subscribe((data2: any) => {
+            this.employes.push(data2);
+          })
+        }
+      });
+     console.log(this.employes)//j en suis au moment ou il faut afficher les employe manquant dans la liste
     });
 
   }
@@ -74,6 +82,7 @@ modifScheduleCompo(){
     email: this.horaire.employeeFromHoraire.email,
     ddn: this.horaire.employeeFromHoraire.ddn,
     mdp: this.horaire.employeeFromHoraire.mdp,
+    numTel: this.horaire.employeeFromHoraire.numTel,
     nbrHeure: this.horaire.employeeFromHoraire.nbrHeure,
     statut: this.horaire.employeeFromHoraire.statut,
     dispo: this.horaire.employeeFromHoraire.dispo,
@@ -158,17 +167,48 @@ modifScheduleCompo(){
   });
 }
   saveRaisonModif(){
-    console.log(this.verifDisp)
-    if (!this.verifDisp) {
-      console.log('testkfdnibiviibqervbubeu')
-      this.rm.horaire = this.horaire;
-      this.horS.saveModif(this.rm).subscribe((data: any)=>{
+    console.log(this.horaire.employeeFromHoraire.idEmploye)
+
+    this.rm.horaire = this.horaire;
+    let rmTemp: RaisonModif = new RaisonModif();
+    rmTemp.raison = this.rm.raison;
+    rmTemp.horaire = {
+      idHoraire: this.horaire.idHoraire,
+      dateJour: this.horaire.dateJour,
+      heureDebut : this.horaire.heureDebut,
+      heureFin : this.horaire.heureFin,
+      heureDebut2: this.horaire.heureDebut2,
+      heureFin2: this.horaire.heureFin2,
+      employeeFromHoraire: null,
+      createBy: null,
+      modifBy: null,
+      nbrHeureDay: null,
+      heureCalculer: null,
+      minuteCalculer: null,
+      rm:null,
+      statusHoraire: true
+    };
+    rmTemp.employeFromRM ={
+      idEmploye : this.horaire.employeeFromHoraire.idEmploye,
+      nom: this.horaire.employeeFromHoraire.nom,
+      prenom: this.horaire.employeeFromHoraire.prenom,
+      email: this.horaire.employeeFromHoraire.email,
+      ddn: this.horaire.employeeFromHoraire.ddn,
+      mdp: this.horaire.employeeFromHoraire.mdp,
+      numTel : this.horaire.employeeFromHoraire.numTel,
+      nbrHeure: this.horaire.employeeFromHoraire.nbrHeure,
+      statut: this.horaire.employeeFromHoraire.statut,
+      dispo: this.horaire.employeeFromHoraire.dispo,
+      horaire: null,
+      semaine: null
+      }
+      console.log(rmTemp)
+    this.horS.saveModif(rmTemp).subscribe((data: any)=>{
       console.log('null')
     });
-    }
-    else{
-      console.log('bsrbtbviuzritvi')
-    }
+
+
+
   }
   removeThisSchedule(){
     this.horaire.statusHoraire = false;

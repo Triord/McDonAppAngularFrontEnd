@@ -141,25 +141,25 @@ dayDate = new Date() ;
 
      // Lundi
     const dateLundi = new Date(this.dayDate);
-    dateLundi.setDate(dateLundi.getDate() + 0);
+    dateLundi.setDate(dateLundi.getDate() + 7);
      // Mardi
     const dateMardii = new Date(this.dayDate);
-    dateMardii.setDate(dateMardii.getDate() + 1);
+    dateMardii.setDate(dateMardii.getDate() + 8);
      // Mercredi
     const dateMercredi = new Date(this.dayDate);
-    dateMercredi.setDate(dateMercredi.getDate() + 2);
+    dateMercredi.setDate(dateMercredi.getDate() + 9);
      // Jeudi
     const dateJeudi = new Date(this.dayDate);
-    dateJeudi.setDate(dateJeudi.getDate() + 3);
+    dateJeudi.setDate(dateJeudi.getDate() + 10);
      // Vendredi
     const dateVendredi = new Date(this.dayDate);
-    dateVendredi.setDate(dateVendredi.getDate() + 4);
+    dateVendredi.setDate(dateVendredi.getDate() + 11);
      // Samedi
     const dateSamedi = new Date(this.dayDate);
-    dateSamedi.setDate(dateSamedi.getDate() + 5);
+    dateSamedi.setDate(dateSamedi.getDate() + 12);
      // Dimanche
     const dateDimanche = new Date(this.dayDate);
-    dateDimanche.setDate(dateDimanche.getDate() + 6);
+    dateDimanche.setDate(dateDimanche.getDate() + 13);
 
     this.lundi = dateLundi;
     this.mardi = dateMardii;
@@ -495,6 +495,7 @@ reloadComponent() {
           prenom: this.hor.employeeFromHoraire.prenom,
           email: this.hor.employeeFromHoraire.email,
           ddn: this.hor.employeeFromHoraire.ddn,
+          numTel: this.hor.employeeFromHoraire.numTel,
           mdp: this.hor.employeeFromHoraire.mdp,
           nbrHeure: this.hor.employeeFromHoraire.nbrHeure,
           statut: this.hor.employeeFromHoraire.statut,

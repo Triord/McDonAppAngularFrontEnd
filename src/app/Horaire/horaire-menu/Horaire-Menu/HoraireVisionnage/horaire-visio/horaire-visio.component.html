@@ -7,10 +7,7 @@
   </div>
 
 
-  <div class="form-group  col-md-4">
-    <label for="date2" >Au:</label>
-    <input id="dateSel2" type="date" placeholder="yyyy-MM-dd" name="date2" class="form-control" style="border-color: rgb(117, 79, 148); border-radius: 10px; font-size: small;">
-  </div>
+
   <div class="form-group  col-md-4">
   <br>
 
@@ -29,7 +26,6 @@
         <th scope="col">{{samedi | date : 'EEEE dd/MM/yyyy'}}</th>
         <th scope="col">{{dimanche | date : 'EEEE dd/MM/yyyy'}}</th>
 
-
       </tr>
       </thead>
 
@@ -38,14 +34,14 @@
         <tr *ngFor="let e of employe; let i = index" >
 
           <ng-container *ngIf="e.horaire.length>0" >
-            <td>{{e.nom}} {{e.prenom}}</td>
-            <td *ngIf="e.semaine?.lundi !== null && e.semaine?.lundi.statusHoraire; else lu; " >{{e.semaine.lundi?.heureDebut }} {{e.semaine.lundi?.heureFin}}</td>
-            <td *ngIf="e.semaine?.mardi !== null && e.semaine?.mardi.statusHoraire; else ma">{{e.semaine.mardi?.heureDebut}} {{e.semaine.mardi?.heureFin}}</td>
-            <td *ngIf="e.semaine?.mercredi !== null && e.semaine?.mercredi.statusHoraire; else me">{{e.semaine.mercredi?.heureDebut}} {{e.semaine.mercredi?.heureFin}}</td>
-            <td *ngIf="e.semaine?.jeudi !== null && e.semaine?.jeudi.statusHoraire; else je">{{e.semaine.jeudi?.heureDebut}} {{e.semaine.jeudi?.heureFin}}</td>
-            <td *ngIf="e.semaine?.vendredi !== null && e.semaine?.vendredi.statusHoraire; else ve">{{e.semaine.vendredi?.heureDebut}} {{e.semaine.vendredi?.heureFin}}</td>
-            <td *ngIf="e.semaine?.samedi !== null && e.semaine?.samedi.statusHoraire; else sa">{{e.semaine.samedi?.heureDebut}} {{e.semaine.samedi?.heureFin}}</td>
-            <td *ngIf="e.semaine?.dimanche !== null && e.semaine?.dimanche.statusHoraire; else di">{{e.semaine.dimanche?.heureDebut}} {{e.semaine.dimanche?.heureFin}}</td>
+            <td >{{e.nom}} {{e.prenom}}</td>
+            <td style="text-align: center;" *ngIf="e.semaine?.lundi !== null && e.semaine?.lundi.statusHoraire; else lu;" >De : {{e.semaine.lundi?.heureDebut|slice:0:5}}<br> A &nbsp;: {{e.semaine.lundi?.heureFin|slice:0:5}}</td>
+            <td style="text-align: center;" *ngIf="e.semaine?.mardi !== null && e.semaine?.mardi.statusHoraire; else ma">De : {{e.semaine.mardi?.heureDebut|slice:0:5}}<br> A &nbsp;: {{e.semaine.mardi?.heureFin|slice:0:5}}</td>
+            <td style="text-align: center;" *ngIf="e.semaine?.mercredi !== null && e.semaine?.mercredi.statusHoraire; else me">De : {{e.semaine.mercredi?.heureDebut|slice:0:5 }}<br> A &nbsp;: {{e.semaine.mercredi?.heureFin|slice:0:5}}</td>
+            <td style="text-align: center;" *ngIf="e.semaine?.jeudi !== null && e.semaine?.jeudi.statusHoraire; else je">De : {{e.semaine.jeudi?.heureDebut|slice:0:5}}<br> A &nbsp;: {{e.semaine.jeudi?.heureFin|slice:0:5}}</td>
+            <td style="text-align: center;" *ngIf="e.semaine?.vendredi !== null && e.semaine?.vendredi.statusHoraire; else ve">De : {{e.semaine.vendredi?.heureDebut|slice:0:5}}<br> A &nbsp;: {{e.semaine.vendredi?.heureFin|slice:0:5}}</td>
+            <td style="text-align: center;" *ngIf="e.semaine?.samedi !== null && e.semaine?.samedi.statusHoraire; else sa">De : {{e.semaine.samedi?.heureDebut|slice:0:5}}<br> A &nbsp;: {{e.semaine.samedi?.heureFin|slice:0:5}}</td>
+            <td style="text-align: center;" *ngIf="e.semaine?.dimanche !== null && e.semaine?.dimanche.statusHoraire; else di">De : {{e.semaine.dimanche?.heureDebut|slice:0:5}}<br> A &nbsp;: {{e.semaine.dimanche?.heureFin|slice:0:5}}</td>
 
 
 

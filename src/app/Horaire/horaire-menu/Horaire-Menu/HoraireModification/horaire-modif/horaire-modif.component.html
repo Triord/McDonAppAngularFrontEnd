@@ -9,7 +9,7 @@
   <select id="emp" class="form-control form-control">
     <option selected>choisissez un travailleur</option>
       <ng-container *ngFor="let employe of employes" >
-    <option  >{{employe.idEmploye}}&nbsp;{{employe.prenom}}&nbsp;{{employe.nom}}</option>
+    <option *ngIf="employe.nom"  >{{employe.idEmploye}}&nbsp;{{employe.prenom}}&nbsp;{{employe.nom}}</option>
       </ng-container>
   </select>
 </div>
@@ -60,5 +60,5 @@
 
 </div>
 <div class="div2" *ngIf="rm?.raison" >
-  <button class="btn btn-primary" (click)="modifScheduleCompo(); saveRaisonModif()">Appliquer les changements</button>
+  <button class="btn btn-primary" (click)=" saveRaisonModif()">Appliquer les changements</button>
 </div>

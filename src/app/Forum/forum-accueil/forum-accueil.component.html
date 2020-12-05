@@ -1,0 +1,12 @@
+<h1>Forum des nouvelles </h1>
+
+<div class="container" *ngFor="let fNews of forumNews" >
+  <div class="jumbotron" *ngIf="fNews.titre"  >
+
+    <h5>{{fNews.titre}}</h5>
+    <hr class="my-4">
+    <p>{{fNews.contenu}}  </p>
+    <small>Publiée le {{fNews.datePublication |date}}</small>
+
+  </div>
+</div>

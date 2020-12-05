@@ -14,5 +14,6 @@ export class Employe{
   statut: boolean;
   semaine: Semaine;
   dispo: Disponibilite;
+  numTel: string;
   horaire: Horaire[]=[];
 }

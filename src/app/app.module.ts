@@ -43,6 +43,10 @@ import { EmployeInfoComponent } from './Employe/employe-info/employe-info.compon
 import { PanelListComponent } from './Panel/panel-list/panel-list.component';
 import { GestionRoleComponent } from './Panel/gestion-role/gestion-role.component';
 import { ListDemandeComponent } from './Conge/list-demande/list-demande.component';
+import { ForumCreationComponent } from './Forum/forum-creation/forum-creation.component';
+import { ForumDetailsComponent } from './Forum/forum-details/forum-details.component';
+import { ForumAccueilComponent } from './Forum/forum-accueil/forum-accueil.component';
+import {MatIconModule} from '@angular/material/icon'
 registerLocaleData(localeFr);
 
 
@@ -68,6 +72,9 @@ const routes: Routes = [
   { path: 'admin/panelList/raisonModifHoraire', component: HoraireModifPanelComponent},
   { path: 'admin/panelList/gestionRole/:id', component: GestionRoleComponent},
   { path: 'conge/listConge' , component: ListDemandeComponent},
+  { path: 'forum' , component: ForumAccueilComponent},
+  { path: 'forum/details/:id', component: ForumDetailsComponent},
+  { path: 'forum/creationNews', component: ForumCreationComponent},
   { path: '', component: HomeComponent },
 ];
 
@@ -92,8 +99,12 @@ const routes: Routes = [
     HoraireModifPanelComponent,
     GestionRoleComponent,
     ListDemandeComponent,
+    ForumCreationComponent,
+    ForumDetailsComponent,
+    ForumAccueilComponent,
   ],
   imports: [
+    MatIconModule,
     BrowserModule,
     AppRoutingModule,
     NgbModule,
