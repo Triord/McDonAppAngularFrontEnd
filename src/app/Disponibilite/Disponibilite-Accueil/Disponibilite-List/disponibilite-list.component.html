@@ -17,7 +17,7 @@
         <th scope="col">Samedi</th>
         <th scope="col">Dimanche</th>
         <td>&nbsp;</td>
-        <!--<td>&nbsp;</td>-->
+        <td>&nbsp;</td>
 
       </tr>
       </thead>
@@ -35,8 +35,8 @@
       <td *ngIf="d.vendredi; else elsev">De : {{d?.vendredi |slice:0:5}} A: {{d?.vendredi2|slice:0:5}}</td>
       <td *ngIf="d.samedi; else elses">De : {{d?.samedi |slice:0:5}} A: {{d?.samedi2|slice:0:5}}</td>
       <td *ngIf="d.dimanche; else elsed">De : {{d?.dimanche |slice:0:5}} A: {{d?.dimanche2|slice:0:5}}</td>
-      <td><mat-icon [routerLink]="['/dispoThisEmp/'+d.idDispo] " style="color: orange; border-style: none; outline-style: none;">border_color</mat-icon></td>
-      <!--<td><mat-icon style="color: red;">delete_outline</mat-icon></td>-->
+      <td><mat-icon id="t" [routerLink]="['/dispoDetails/'+d.idDispo] " style="color: orange; border-style: none; outline-style: none;">border_color</mat-icon></td>
+      <td><mat-icon id="t" [routerLink]="['/dispoThisEmp/'+d.idDispo] ">remove_red_eye</mat-icon></td>
 
 
 

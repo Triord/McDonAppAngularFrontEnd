@@ -191,6 +191,9 @@ export class HoraireVisioComponent implements OnInit {
       console.log(this.employe);
       console.log(this.horaire);
       });
+      this.employe.forEach(test => {
+        console.log(test.semaine.lundi.nbrHeureDay)
+      });
     });
 
 

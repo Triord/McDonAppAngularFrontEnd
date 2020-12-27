@@ -2,14 +2,14 @@
 <ul id="navbarStyle" ngbNav class="nav-tabs justify-content-center" style="padding-bottom: 20px; border-style: none;" >
 
 
-  <button type="button" id="posBttn" class="btn btn-outline-info"   [routerLink]="'/employe/list'">Employée
+  <button *ngIf="authenticated" type="button" id="posBttn" class="btn btn-outline-info"   [routerLink]="'/employe/list'">Employée
   </button>
-  <button type="button" id="posBttn" class="btn btn-outline-info"[routerLink]="'/conge/listConge'"  >Congé
+  <button *ngIf="authenticated" type="button" id="posBttn" class="btn btn-outline-info"[routerLink]="'/conge/listConge'"  >Congé
     <ng-template ngbNavContent>
       <p></p>
     </ng-template>
   </button>
-  <button type="button" id="posBttn" class="btn btn-outline-info" [routerLink]="'/dispoMenu'"  >Disponibilité
+  <button *ngIf="authenticated" type="button" id="posBttn" class="btn btn-outline-info" [routerLink]="'/dispoList'"  >Disponibilité
     <ng-template ngbNavContent>
       <p></p>
     </ng-template>
@@ -22,7 +22,7 @@
   </button>
 -->
 
-  <div class="btn-group mr-3">
+  <div class="btn-group mr-3" *ngIf="authenticated">
     <button type="button" id="posBttn" class="btn btn-outline-info" [routerLink]="'/horaireVue'" >Horaire</button>
     <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
       <button id="posBttn" class="btn btn-primary dropdown-toggle-split" ngbDropdownToggle></button>
@@ -39,23 +39,23 @@
   </ng-template>
 </button>
 -->
-<button type="button" id="posBttn" class="btn btn-outline-info" >Question
+<button *ngIf="authenticated" type="button" id="posBttn" class="btn btn-outline-info" >Question
   <ng-template ngbNavContent>
     <p></p>
   </ng-template>
 </button>
-<button type="button" id="posBttn" class="btn btn-outline-info" [routerLink]="'/forum'" >Forum
+<button *ngIf="authenticated" type="button" id="posBttn" class="btn btn-outline-info" [routerLink]="'/forum'" >Forum
   <ng-template ngbNavContent>
     <p></p>
   </ng-template>
 </button>
-<button type="button" id="posBttn" class="btn btn-outline-info">Appellez renforts
+<button *ngIf="authenticated"  type="button" id="posBttn" class="btn btn-outline-info">Appellez renforts
   <ng-template ngbNavContent>
     <p></p>
   </ng-template>
 </button>
 
-<button type="button" id="posBttn" class="btn btn-outline-info" [routerLink]="'/admin/panelList'">Panel StoreManager
+<button *ngIf="role === 'StoreManager' && authenticated" type="button" id="posBttn" class="btn btn-outline-info" [routerLink]="'/admin/panelList'"  >Panel StoreManager
   <ng-template ngbNavContent>
     <p></p>
   </ng-template>

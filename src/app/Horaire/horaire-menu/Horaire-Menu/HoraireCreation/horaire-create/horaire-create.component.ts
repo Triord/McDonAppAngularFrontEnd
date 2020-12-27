@@ -137,6 +137,7 @@ dayDate = new Date() ;
     endWeek.setDate(endWeek.getDate() + 6); // endweek set a dimanche
      // console.log('endweek is',endWeek);
     this.EndDate = endWeek; // endDate = date de dimanche
+    this.EndDate.setDate(this.EndDate.getDate() + 7);
     this.EndDate = moment(this.EndDate).format('YYYY-MM-DD') as unknown as Date;
 
      // Lundi
@@ -188,6 +189,8 @@ dayDate = new Date() ;
     const dateRecherche = new Date(this.dayDate);
     dateRecherche.setDate(dateRecherche.getDate() - 1);
     this.dayDate = dateRecherche;
+    this.dayDate.setDate(this.dayDate.getDate() + 7);
+
     this.dayDate = moment(this.dayDate).format('YYYY-MM-DD') as unknown as Date;
      // Fin de la conf
 
@@ -200,10 +203,10 @@ dayDate = new Date() ;
         return 0;
     });
 // REGLER LE PROBLEME DES HORAIRE QUI NE S AFFICHE PAS
-
+       console.log(this.dayDate, this.EndDate);
        this.horS.getHoraire(this.dayDate as unknown as string, this.EndDate as unknown as string).subscribe((data: Horaire[]) => {
        this.horaire = data;
-       console.log(this.horaire)
+       console.log(this.horaire);
        this.employe.forEach(employe => {
          employe.semaine = new Semaine();
 
@@ -215,7 +218,7 @@ dayDate = new Date() ;
           // tslint:disable-next-line: no-shadowed-variable
           this.horS.getScheduleById(h).subscribe((data: any) => {
             h = data;
-            this.horaire.push(data)
+            this.horaire.push(data);
             // initialisation du time de heureDebut
             const hd = h.heureDebut as unknown as string;
             const hdHour = hd.slice(0, 2);
@@ -298,7 +301,7 @@ dayDate = new Date() ;
         }
 
         if (typeof h !== 'number') {
-            this.horaire.push(h)
+            this.horaire.push(h);
           // tslint:disable-next-line: no-shadowed-variable
 
             // initialisation du time de heureDebut
@@ -374,27 +377,63 @@ dayDate = new Date() ;
 
 
      });
-       console.log(this.horaire)
+       console.log(this.horaire);
+
+
+       this.employe.forEach(test => {
+         let hlun = test.semaine.lundi?.nbrHeureDay.toString();
+         if (hlun === undefined) {
+           hlun = '0';
+         }
+         console.log(hlun);
+         let hmar = test.semaine.mardi?.nbrHeureDay.toString();
+         if (hmar === undefined) {
+           hmar = '0';
+         }
+         console.log(hmar);
+         let hmer = test.semaine.mercredi?.nbrHeureDay.toString();
+         if (hmer === undefined) {
+           hmer = '0';
+         }
+         console.log(hmer);
+         let hjeu = test.semaine.jeudi?.nbrHeureDay.toString();
+         if (hjeu === undefined) {
+           hjeu = '0';
+         }
+         console.log(hjeu);
+         let hven = test.semaine.vendredi?.nbrHeureDay.toString();
+         if (hven === undefined) {
+           hven = '0';
+         }
+         console.log(hven);
+         let hsam = test.semaine.samedi?.nbrHeureDay.toString();
+         if (hsam === undefined) {
+           hsam = '0';
+         }
+         console.log(hsam);
+         let hdim = test.semaine.dimanche?.nbrHeureDay.toString();
+         if (hdim === undefined) {
+           hdim = '0';
+         }
 
 
 
-       console.log(this.employe);
-       this.employe.forEach(emp => {
-        console.log(emp.semaine);
+     });
 
-
-
-   });
     });
 
      });
+
 
   }
 reloadComponent() {
   location.reload();
 }
  showData() {
-   console.log(this.hor);
+   // tslint:disable-next-line: align
+   this.employe.forEach(e => {
+    console.log(e)
+  });
  }
  createSchedule() {
   const DateHorCreate: Date = new Date(this.hor.dateJour);

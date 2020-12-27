@@ -32,6 +32,9 @@ export class LoginComponent implements OnInit {
         this.token = this.authService.getAuthenticatedToken();
         this.logged = true;
         this.router.navigate(['/home']);
+        setTimeout(()=>{
+          window.location.reload();
+        }, 100);
       }
     );
   }

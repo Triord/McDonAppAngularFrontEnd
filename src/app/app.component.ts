@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
   title = 'McDonApp';
 l: boolean = false;
 username: string;
+role: string;
 active='top';
   constructor(private auth: AuthenticationService, private logou: LoginComponent , private router: Router){}
 
@@ -24,10 +25,11 @@ active='top';
   ngOnInit() {
    console.log("le log"+this.authenticated);
    this.username =  this.auth.getAuthenticatedUser();
-   console.log(this.username)
+   this.role = this.auth.getRole();
+   console.log(this.username, 'le role est', this.role)
   }
   logout(){
-    this.logou.logout();
+    this.auth.logout();
     this.l = false;
     this.router.navigate(['/login']);
   }
