@@ -157,9 +157,10 @@ modifScheduleCompo(){
       this.verifDisp = true;
     }
     }
-
+    console.log(hor)
     if (this.verifDisp) {
       this.horS.modifScheduleServ(hor).subscribe(( data ) => {
+        console.log(data)
     alert('Modification effectué cliqué pour continuer');
     location.reload();
   });
@@ -204,7 +205,7 @@ modifScheduleCompo(){
       }
       console.log(rmTemp)
     this.horS.saveModif(rmTemp).subscribe((data: any)=>{
-      console.log('null')
+      console.log(data)
     });
 
 

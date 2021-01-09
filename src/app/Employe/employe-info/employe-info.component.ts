@@ -35,11 +35,12 @@ export class EmployeInfoComponent implements OnInit {
       mdp: this.employe.mdp,
       nbrHeure: this.employe.nbrHeure,
       statut: this.employe.statut,
-      dispo: this.employe.dispo,
+      dispo: null,
       numTel: this.employe.numTel,
       horaire: null,
       semaine: null
     }
+    console.log(v);
     this.empS.saveRaisonViewedEmp(v).subscribe((data: any) => {
       console.log(v);
     });

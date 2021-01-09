@@ -19,9 +19,9 @@ export class HttpInterceptorAuthService implements HttpInterceptor {
 
 
     if (authHeaderString && username) {
-
+/*
       console.log(authHeaderString);
-      console.log(username);
+      console.log(username);*/
 
 
       reqauth = req.clone({

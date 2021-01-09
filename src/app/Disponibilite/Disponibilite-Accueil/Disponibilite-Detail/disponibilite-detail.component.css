@@ -1,0 +1,22 @@
+
+  input[type=text] {
+    border-color: rgb(117, 79, 148);
+    border-radius: 10px;
+    outline: none;
+  }
+  .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: rgb(117, 79, 148)!important;
+    border-color: white; /*set the color you want here*/
+    outline: none!important;
+    box-shadow: none !important;
+}
+.btn-primary {
+  color:  rgb(117, 79, 148);
+  float: right;
+  margin-top: 28px;
+  border-color:  rgb(138, 101, 168)!important;
+  background-color: white;
+  outline: none!important;
+  box-shadow: none !important;
+}

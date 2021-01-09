@@ -69,13 +69,13 @@
 
           <ng-container *ngIf="e.horaire.length>0" >
             <td>{{e.nom}}<br> {{e.prenom}}</td>
-                <td *ngIf="e?.semaine?.lundi !== null; else lu"  >{{e?.semaine?.lundi?.heureDebut }} <br> {{e?.semaine?.lundi?.heureFin}} <br *ngIf="e?.semaine?.lundi?.heureDebut2"> {{e?.semaine?.lundi?.heureDebut2}} <br> {{e.semaine?.lundi?.heureFin2}}</td>
-                <td *ngIf="e?.semaine?.mardi !== null; else ma">{{e?.semaine?.mardi?.heureDebut}}<br>  {{e?.semaine?.mardi?.heureFin}} <br *ngIf="e?.semaine?.mardi?.heureDebut2"> {{e?.semaine?.mardi?.heureDebut2}} <br> {{e.semaine?.mardi?.heureFin2}}</td>
-                <td *ngIf="e?.semaine?.mercredi !== null; else me">{{e?.semaine?.mercredi?.heureDebut}}<br> {{e?.semaine?.mercredi?.heureFin}} <br *ngIf="e?.semaine?.mercredi?.heureDebut2"> {{e?.semaine?.mercredi?.heureDebut2}} <br> {{e.semaine?.mercredi?.heureFin2}}</td>
-                <td *ngIf="e?.semaine?.jeudi !== null; else je">{{e?.semaine?.jeudi?.heureDebut}} <br> {{e?.semaine?.jeudi?.heureFin}}<br *ngIf="e?.semaine?.jeudi?.heureDebut2"> {{e.semaine?.jeudi?.heureDebut2}} <br> {{e.semaine?.jeudi?.heureFin2}}</td>
-                <td *ngIf="e?.semaine?.vendredi !== null; else ve">{{e?.semaine?.vendredi?.heureDebut}}<br> {{e?.semaine?.vendredi?.heureFin}}<br *ngIf="e?.semaine?.vendredi?.heureDebut2" >  {{e?.semaine?.vendredi?.heureDebut2}} <br> {{e.semaine?.vendredi?.heureFin2}}</td>
-                <td *ngIf="e?.semaine?.samedi !== null; else sa">{{e?.semaine?.samedi?.heureDebut}}<br>  {{e?.semaine?.samedi?.heureFin}}  <br *ngIf="e?.semaine?.samedi?.heureDebut2"> {{e?.semaine?.samedi?.heureDebut2}} <br> {{e.semaine?.samedi?.heureFin2}}</td>
-                <td *ngIf="e?.semaine?.dimanche !== null; else di">{{e?.semaine?.dimanche?.heureDebut}}<br>  {{e?.semaine?.dimanche?.heureFin}} <br *ngIf="e?.semaine?.dimanche?.heureDebut2"> {{e?.semaine?.dimanche?.heureDebut2}} <br> {{e.semaine?.dimanche?.heureFin2}}</td>
+                <td style="text-align: center;" *ngIf="e?.semaine?.lundi !== null; else lu"  >De : {{e?.semaine?.lundi?.heureDebut }} <br> A &nbsp; : {{e?.semaine?.lundi?.heureFin}} <br *ngIf="e?.semaine?.lundi?.heureDebut2"> {{e?.semaine?.lundi?.heureDebut2}} <br> {{e.semaine?.lundi?.heureFin2}}</td>
+                <td style="text-align: center;" *ngIf="e?.semaine?.mardi !== null; else ma">De : {{e?.semaine?.mardi?.heureDebut}}<br> A &nbsp; :   {{e?.semaine?.mardi?.heureFin}} <br *ngIf="e?.semaine?.mardi?.heureDebut2"> {{e?.semaine?.mardi?.heureDebut2}} <br> {{e.semaine?.mardi?.heureFin2}}</td>
+                <td style="text-align: center;" *ngIf="e?.semaine?.mercredi !== null; else me">De : {{e?.semaine?.mercredi?.heureDebut}}<br> A &nbsp; :  {{e?.semaine?.mercredi?.heureFin}} <br *ngIf="e?.semaine?.mercredi?.heureDebut2"> {{e?.semaine?.mercredi?.heureDebut2}} <br> {{e.semaine?.mercredi?.heureFin2}}</td>
+                <td style="text-align: center;" *ngIf="e?.semaine?.jeudi !== null; else je">De : {{e?.semaine?.jeudi?.heureDebut}} <br> A &nbsp; :  {{e?.semaine?.jeudi?.heureFin}}<br *ngIf="e?.semaine?.jeudi?.heureDebut2"> {{e.semaine?.jeudi?.heureDebut2}} <br> {{e.semaine?.jeudi?.heureFin2}}</td>
+                <td style="text-align: center;" *ngIf="e?.semaine?.vendredi !== null; else ve">De : {{e?.semaine?.vendredi?.heureDebut}}<br> A &nbsp; :  {{e?.semaine?.vendredi?.heureFin}}<br *ngIf="e?.semaine?.vendredi?.heureDebut2" >  {{e?.semaine?.vendredi?.heureDebut2}} <br> {{e.semaine?.vendredi?.heureFin2}}</td>
+                <td style="text-align: center;" *ngIf="e?.semaine?.samedi !== null; else sa">De : {{e?.semaine?.samedi?.heureDebut}}<br> A &nbsp; :   {{e?.semaine?.samedi?.heureFin}}  <br *ngIf="e?.semaine?.samedi?.heureDebut2"> {{e?.semaine?.samedi?.heureDebut2}} <br> {{e.semaine?.samedi?.heureFin2}}</td>
+                <td style="text-align: center;" *ngIf="e?.semaine?.dimanche !== null; else di">De : {{e?.semaine?.dimanche?.heureDebut}}<br> A &nbsp; :   {{e?.semaine?.dimanche?.heureFin}} <br *ngIf="e?.semaine?.dimanche?.heureDebut2"> {{e?.semaine?.dimanche?.heureDebut2}} <br> {{e.semaine?.dimanche?.heureFin2}}</td>
 
           </ng-container>
 

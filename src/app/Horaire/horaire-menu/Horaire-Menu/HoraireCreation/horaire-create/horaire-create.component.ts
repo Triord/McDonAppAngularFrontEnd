@@ -203,10 +203,10 @@ dayDate = new Date() ;
         return 0;
     });
 // REGLER LE PROBLEME DES HORAIRE QUI NE S AFFICHE PAS
-       console.log(this.dayDate, this.EndDate);
+      // console.log(this.dayDate, this.EndDate);
        this.horS.getHoraire(this.dayDate as unknown as string, this.EndDate as unknown as string).subscribe((data: Horaire[]) => {
        this.horaire = data;
-       console.log(this.horaire);
+      // console.log(this.horaire);
        this.employe.forEach(employe => {
          employe.semaine = new Semaine();
 
@@ -351,7 +351,7 @@ dayDate = new Date() ;
 
             if (h.dateJour === this.lundi) {
          this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).semaine.lundi = h;
-         console.log(this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).semaine.lundi);
+        // console.log(this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).semaine.lundi);
        }
             if (h.dateJour === this.mardi) {
          this.employe.find(employe => employe.idEmploye === h.employeeFromHoraire.idEmploye).semaine.mardi = h;
@@ -377,7 +377,7 @@ dayDate = new Date() ;
 
 
      });
-       console.log(this.horaire);
+       //console.log(this.horaire);
 
 
        this.employe.forEach(test => {
@@ -385,32 +385,32 @@ dayDate = new Date() ;
          if (hlun === undefined) {
            hlun = '0';
          }
-         console.log(hlun);
+         //console.log(hlun);
          let hmar = test.semaine.mardi?.nbrHeureDay.toString();
          if (hmar === undefined) {
            hmar = '0';
          }
-         console.log(hmar);
+         //console.log(hmar);
          let hmer = test.semaine.mercredi?.nbrHeureDay.toString();
          if (hmer === undefined) {
            hmer = '0';
          }
-         console.log(hmer);
+         //console.log(hmer);
          let hjeu = test.semaine.jeudi?.nbrHeureDay.toString();
          if (hjeu === undefined) {
            hjeu = '0';
          }
-         console.log(hjeu);
+         //console.log(hjeu);
          let hven = test.semaine.vendredi?.nbrHeureDay.toString();
          if (hven === undefined) {
            hven = '0';
          }
-         console.log(hven);
+         // console.log(hven);
          let hsam = test.semaine.samedi?.nbrHeureDay.toString();
          if (hsam === undefined) {
            hsam = '0';
          }
-         console.log(hsam);
+         // console.log(hsam);
          let hdim = test.semaine.dimanche?.nbrHeureDay.toString();
          if (hdim === undefined) {
            hdim = '0';
@@ -432,7 +432,7 @@ reloadComponent() {
  showData() {
    // tslint:disable-next-line: align
    this.employe.forEach(e => {
-    console.log(e)
+
   });
  }
  createSchedule() {
@@ -455,11 +455,14 @@ reloadComponent() {
     // tslint:disable-next-line: no-shadowed-variable
     this.dispoS.getDispInHor(idUC).subscribe((data: Disponibilite) => {
       this.disp = data;
+
+
       console.log('les disp de l utilisateur selectionne sont', this.disp);
       if (DateHorCreate.toString().slice(0, 3) === 'Mon') {
       console.log('date is lundi');
       if (this.hor?.heureDebut < this.disp?.lundi || this.hor?.heureFin > this.disp?.lundi2 ||
         this.hor?.heureDebut2 < this.disp?.lundi || this.hor?.heureFin2 > this.disp?.lundi2 ) {
+          console.log('test si data passe dans le if')
       this.verifDisp = false;
 
     } else {
@@ -538,14 +541,15 @@ reloadComponent() {
           mdp: this.hor.employeeFromHoraire.mdp,
           nbrHeure: this.hor.employeeFromHoraire.nbrHeure,
           statut: this.hor.employeeFromHoraire.statut,
-          dispo: this.hor.employeeFromHoraire.dispo,
+          dispo: null,
           horaire: null,
           semaine: null
         };
         // tslint:disable-next-line: no-shadowed-variable
         this.horS.addSchedule(horr).subscribe((data: Horaire) => {
       console.log(data);
-
+      alert('Horaire créé avec succès vous pouvez continuer');
+      location.reload();
 
     });
 

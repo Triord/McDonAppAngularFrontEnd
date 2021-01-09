@@ -103,3 +103,9 @@ h1{
   color: rgb(41, 184, 184);
   font-family: FreeMono, monospace;
   }
+  td{
+    width: 10px;
+    height: 10px!important;
+    max-width: 10px;
+    max-height: 40px;
+  }

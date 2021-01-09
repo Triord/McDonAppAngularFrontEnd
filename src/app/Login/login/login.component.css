@@ -1,0 +1,31 @@
+.center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 50vh;
+}
+input{
+  border-color: rgb(117, 79, 148);
+  border-radius: 10px;
+  outline: none!important;
+  box-shadow: none !important;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: rgb(117, 79, 148)!important;
+  border-color: white; /*set the color you want here*/
+  outline: none!important;
+  box-shadow: none !important;
+  margin-right: 40px;
+}
+.btn-primary {
+color:  rgb(117, 79, 148);
+float: right;
+border-color:  rgb(138, 101, 168)!important;
+background-color: white;
+outline: none!important;
+box-shadow: none !important;
+margin-right: 40px;
+}
